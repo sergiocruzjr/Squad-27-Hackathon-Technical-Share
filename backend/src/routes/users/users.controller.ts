@@ -1,66 +1,38 @@
-import { remove, update } from 'firebase/database';
-import { database, set, ref, get, child } from '../../models/database/firebase-connection';
+import { Request, Response } from 'express';
+import { createUser, deleteUser, getUsers, updateUser } from '../../models/users.model';
 
 //! Método POST - Criando um usuário no banco do Firebase
-async function httpCreateUser(request, response){
+async function httpCreateUser(request: Request, response: Response){
     const { name, username } = request.body;
 
-    const referencePath = '/users/'+username+'/';
-	const userReference = ref(database, referencePath);
-
-    await update(userReference, {
-        name,
-        created_at: new Date(),
-    });
+    await createUser(name, username);
 
     return response.status(200).send();
 }
 
 //! Método GET - Coletando dados do usuário no banco
-async function httpGetUser(request, response){
-    let users;
-
-    const referencePath = '/users/';
-    const userReference = ref(database, referencePath);
-    const snapshot = await get(userReference);
-
-    if (snapshot.exists()) {
-        users = snapshot.val();
-        console.log(snapshot.val());
-        console.log(users);
-    } else {
-        console.log("No data available");
-    }
+async function httpGetUser(request: Request, response: Response){
+    const users = await getUsers();
     
     return response.status(200).json(users);
 }
 
 //! Método PUT - Update dos dados do usuário
     //TODO Posso trocar para PATCH?
-async function httpUpdateUser(request, response){
+async function httpUpdateUser(request: Request, response: Response){
     const { name, username } = request.body;
 
-    const referencePath = '/users/'+username+'/';
-    const userReference = ref(database, referencePath);
-
-    //TODO: como será tratado os dados que não serão alterados
-    await set(userReference, {
-        name,
-        created_at: new Date(),
-    });
+    await updateUser(name, username);
 
     return response.status(200).send();
 }
 
 //! Método DELETE - Deletando dados do usuário
-async function httpDeleteUser(request, response){
+async function httpDeleteUser(request: Request, response: Response){
     const { username } = request.params;
     console.log(username);
 
-    const referencePath = '/users/'+username+'/';
-    const userReference = ref(database, referencePath);
-
-    await remove(userReference);
+    await deleteUser(username);
 
     return response.status(200).send();
 }
