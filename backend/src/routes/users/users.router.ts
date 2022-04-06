@@ -2,13 +2,13 @@
 import express from 'express';
 
 //! Importando o controller
-import { httpGetUser, httpUpdateUser, httpCreateUser, httpDeleteUser } from './users.controller';
+import { httpGetAllUsers, httpUpdateUser, httpCreateUser, httpDeleteUser } from './users.controller';
 
 //! Definindo o router dos usuários
 const usersRouter = express.Router();
 
 //? Método GET
-    usersRouter.get('/', httpGetUser);
+    usersRouter.get('/', httpGetAllUsers);
 //? Método POST
     usersRouter.post('/', httpCreateUser);
 //? Método PUT

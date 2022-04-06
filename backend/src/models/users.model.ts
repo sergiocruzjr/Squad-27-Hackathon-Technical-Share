@@ -11,7 +11,7 @@ async function createUser(name: string, username: string){
     });
 }
 
-async function getUsers(){
+async function getAllUsers(){
     let users;
 
     const referencePath = '/users/';
@@ -49,7 +49,7 @@ async function deleteUser(username: string){
 
 export {
     createUser,
-    getUsers,
+    getAllUsers,
     updateUser,
     deleteUser,
 }

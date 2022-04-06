@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { createUser, deleteUser, getUsers, updateUser } from '../../models/users.model';
+import { createUser, deleteUser, getAllUsers, updateUser } from '../../models/users.model';
 
 //! Método POST - Criando um usuário no banco do Firebase
 async function httpCreateUser(request: Request, response: Response){
@@ -11,8 +11,8 @@ async function httpCreateUser(request: Request, response: Response){
 }
 
 //! Método GET - Coletando dados do usuário no banco
-async function httpGetUser(request: Request, response: Response){
-    const users = await getUsers();
+async function httpGetAllUsers(request: Request, response: Response){
+    const users = await getAllUsers();
     
     return response.status(200).json(users);
 }
@@ -39,7 +39,7 @@ async function httpDeleteUser(request: Request, response: Response){
 
 export {
     httpCreateUser,
-    httpGetUser,
+    httpGetAllUsers,
     httpUpdateUser,
     httpDeleteUser,
 }
