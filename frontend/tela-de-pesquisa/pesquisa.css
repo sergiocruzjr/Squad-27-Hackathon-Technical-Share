@@ -1,0 +1,41 @@
+header {
+    background-color: orange;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.barra {
+    display: inline-block;
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.barra input{
+    display: inline-block;
+    position: relative;
+    width: 750px;
+}
+
+section {
+    display: inline-block;
+}
+
+#pesquisa-filtro {
+    display: inline-block;
+    background-color: rgb(226, 223, 223);
+    padding: 0 10px;
+}
+#pesquisa-filtro li{
+    display: inline;
+}
+
+#pesquisa-perfis {
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgb(245, 243, 239);
+    padding: 0 10px;
+}
