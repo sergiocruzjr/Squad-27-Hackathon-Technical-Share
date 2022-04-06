@@ -1,68 +1,20 @@
-import express from 'express';
-import { remove, update } from 'firebase/database';
-import { database, set, ref, get, child } from './database/firebase-connection';
+//! Importando HTTP, dotenv e app
+import http from 'http';
+import dotenv from 'dotenv';
+    dotenv.config();
+import app from './app'
 
-const app = express();
-app.use(express.json());
+const PORT = process.env.PORT;
 
-//TODO: tratamento de erros e exceções
-app.post("/teste", async (request, response) => {
-    const { name, username } = request.body;
+//! Definindo o servidor
+const server = http.createServer(app);
 
-    const referencePath = '/users/'+username+'/';
-	const userReference = ref(database, referencePath);
+//? Função para inicializar o servidor
+function startServer(){
+    server.listen(PORT, () => {
+        console.log(`Listening server on PORT ${PORT}`);
+    })
+}
 
-    await update(userReference, {
-        name,
-        created_at: new Date(),
-    });
-
-    return response.status(200).send();
-});
-
-app.get("/teste", async (request, response) => {
-    let users;
-
-    const referencePath = '/users/';
-    const userReference = ref(database, referencePath);
-    const snapshot = await get(userReference);
-
-    if (snapshot.exists()) {
-        users = snapshot.val();
-        console.log(snapshot.val());
-        console.log(users);
-    } else {
-        console.log("No data available");
-    }
-    
-    return response.status(200).json(users);
-});
-
-app.put("/users", async (request, response) => {
-    const { name, username } = request.body;
-
-    const referencePath = '/users/'+username+'/';
-    const userReference = ref(database, referencePath);
-
-    //TODO: como será tratado os dados que não serão alterados
-    await set(userReference, {
-        name,
-        created_at: new Date(),
-    });
-
-    return response.status(200).send();
-});
-
-app.delete("/users/:username", async (request, response) => {
-    const { username } = request.params;
-    console.log(username);
-
-    const referencePath = '/users/'+username+'/';
-    const userReference = ref(database, referencePath);
-
-    await remove(userReference);
-
-    return response.status(200).send();
-});
-
-app.listen(3333, () => console.log("Servidor está rodando..."));
+//! Inicializando o servidor
+startServer();
