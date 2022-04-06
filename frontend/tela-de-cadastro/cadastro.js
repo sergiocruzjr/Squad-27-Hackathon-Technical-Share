@@ -7,10 +7,11 @@ function(event){
     //Extraindo informações do usuario do form
     var usuario = obtemUsuarioCadastrado(form)
 
+    //adicionaUsuarioLista(usuario)
+    adicionaUsuarioLista(usuario)
     //cria tr e td do usuario
     var usuarioTr = montaTr(usuario)
-    
-    
+
     var tabela = document.querySelector("#tabela-usuarios")
     tabela.appendChild(usuarioTr);
 
@@ -25,6 +26,13 @@ function obtemUsuarioCadastrado(form){
         senha: form.senha.value
     }
     return usuario;
+}
+
+var listaUsuarios = [];
+
+function adicionaUsuarioLista(usuario){
+    listaUsuarios.push(usuario);
+    console.log(listaUsuarios);
 }
 
 function montaTr(usuario) {
