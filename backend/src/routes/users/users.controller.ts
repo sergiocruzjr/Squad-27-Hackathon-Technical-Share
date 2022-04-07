@@ -1,13 +1,16 @@
 import { Request, Response } from 'express';
 import { createUser, deleteUser, getAllUsers, updateUser } from '../../models/users.model';
+import { createUserAuth } from '../../models/auth.model'
 
 //! Método POST - Criando um usuário no banco do Firebase
 async function httpCreateUser(request: Request, response: Response){
-    const { name, username } = request.body;
+    const { name, password } = request.body;
+    //? Se não houver nenhum problema retorna 'true'
+    const statusResponse = await createUserAuth(name, password)
 
-    await createUser(name, username);
-
-    return response.status(200).send();
+    //? Retornando status 201 - CREATED ou 400 - BAD REQUEST
+    if(statusResponse) return response.status(201).send();
+    else return response.status(400).send();
 }
 
 //! Método GET - Coletando dados do usuário no banco
