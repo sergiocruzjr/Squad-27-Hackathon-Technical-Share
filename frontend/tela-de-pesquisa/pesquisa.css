@@ -7,26 +7,25 @@ nav li{
     margin-left: 20px;
 }
 
-.barra {
-    display: inline-block;
+.barra-pesquisa {
     position: relative;
-    width: 940px;
+    width: 540px;
     margin: 0 auto;
 }
 
 .barra input{
-    display: inline-block;
+    display: inline;
     position: relative;
     width: 750px;
 }
 
 section {
-    display: inline-block;
+    display: inline;
+
 }
 
 #pesquisa-filtro {
     display: inline-block;
-    background-color: rgb(226, 223, 223);
     padding: 0 10px;
 }
 #pesquisa-filtro li{
@@ -36,6 +35,20 @@ section {
 #pesquisa-perfis {
     display: inline-block;
     vertical-align: top;
-    background-color: rgb(245, 243, 239);
+    margin-top: 20px;
     padding: 0 10px;
+}
+
+.filtro-categorias{
+    margin-top: 20px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+}
+
+.nome-categorias{
+    margin: 5px;
+}
+
+.list-group{
+    width: 800px;
 }

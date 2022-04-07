@@ -9,10 +9,7 @@ function(event){
 
     //cria tr e td do usuario
     var usuarioTr = montaTr(usuario)
-    
-    
-    var tabela = document.querySelector("#tabela-usuarios")
-    tabela.appendChild(usuarioTr);
+
 
     form.reset();
 })
@@ -26,6 +23,30 @@ function obtemUsuarioCadastrado(form){
     }
     return usuario;
 }
+
+
+var enviarUsuarios = document.querySelector("#finalizar-cadastro")
+
+enviarUsuarios.addEventListener("click", function(){
+    console.log(enviarUsuarios);
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("PUT", "localhost:3333/users")
+
+    /*xhr.addEventListener("load", function(){
+        var resposta = xhr.responseText;
+        var usuarios = JSON.parse(resposta);
+
+        usuarios.forEach(function(usuario){
+        
+
+        })
+    })*/
+
+    xhr.send();
+})
+
 
 function montaTr(usuario) {
     var usuarioTr = document.createElement("tr");
@@ -46,6 +67,9 @@ function montaTr(usuario) {
     usuarioTr.appendChild(nomeTd);
     usuarioTr.appendChild(emailTd);
     usuarioTr.appendChild(senhaTd);
+
+    var tabela = document.querySelector("#tabela-usuarios")
+    tabela.appendChild(usuarioTr);
 
     return usuarioTr;
 }

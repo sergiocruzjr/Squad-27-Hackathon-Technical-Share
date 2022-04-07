@@ -5,63 +5,196 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesquisar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="pesquisa.css">
 </head>
 <body>
     <header>
-        <div class="caixa">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Technical Share</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../home.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Quem somos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Meu perfil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../tela-de-cadastro/cadastro.html">Cadastre-se</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>        
+        <!--div class="caixa">
             <h1><img src="" alt="">Logo</h1>
-            <nav>
+            <nav> 
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">Encontre um Sangue Laranja</a></li>
                 </ul>
             </nav>
-        </div>
+        </div-->
     </header>
     <main>
-        <div class="barra">
-            <input type="text" placeholder="Encontre um sangue laranja">
-            <button>Pesquisar</button>
+        <div class="input-group mb-3 barra-pesquisa">
+            <input type="text" class="form-control" placeholder="Encontre um sangue laranja" aria-label="Encontre um sangue laranja" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Pesquisar</button>
         </div>
-        <section>
-            <div id="pesquisa-filtro">
-                <p>Profissionais</p>
-                <ul class="lista-filtro">
-                    <li><p><input type="radio">Dev</p></li>
-                    <li><p><input type="radio">UX</p></li>
-                    <li><p><input type="radio">Scrum Master</p></li>
-                </ul>
-                <p>Dev</p>
-                <ul class="lista-filtro">
-                    <li><p><input type="radio">HTML</p></li>
-                    <li><p><input type="radio">CSS</p></li>
-                    <li><p><input type="radio">Javascrip</p></li>
-                    <li><p><input type="radio">Node.js</p></li>
-                </ul>
-                <p>UX Design</p>
-                <ul class="lista-filtro">
-                    <li><p><input type="radio">Design</p></li>
-                    <li><p><input type="radio">Research</p></li>
-                    <li><p><input type="radio">UI</p></li>
-                    <li><p><input type="radio">Teste de Usabilidade</p></li>
-                </ul>
-                <p>Scrum Master</p>
-                <ul class="lista-filtro">
-                    <li><p><input type="radio">Metodologia Agil</p></li>
-                    <li><p><input type="radio">Scrum</p></li>
-                    <li><p><input type="radio">Kanban</p></li>
-                    <li><p><input type="radio">Daily</p></li>
-                </ul>
-            </div>
+            <section>
+                <div id="pesquisa-filtro">
+                    <div class="filtro-categorias">
+                        <p class="nome-categorias">Área de atuação</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Devs
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                              UX Design
+                            </label>
+                        </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Scrum Master
+                            </label>
+                          </div>
+                    </div>
+                    <div class="filtro-categorias">
+                        <p class="nome-categorias">Devs</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                html
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                css
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Javascript
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Node.js
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filtro-categorias">
+                        <p class="nome-categorias">UX Design</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Design
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Research
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                UI
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Teste de Usabilidade
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filtro-categorias">
+                        <p class="nome-categorias">Scrum Master</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Metodologia Ágil
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Scrum
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Kanban
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Daily
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <div id="pesquisa-perfis">
-                <ul>
-                    
-                </ul>
-            </div>
-        </section>
+            <section>
+                <div id="pesquisa-perfis">
+                    <ul class="list-group">
+                        <li class="list-group-item" aria-current="true">An active item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                    </ul>
 
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Senha</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-usuarios">
+                            <tr class="usuario" id="primeiro-usuario">
+                                <td class="info-nome">Fulano</td>
+                                <td class="info-email">fulano@gmail.com</td>
+                                <td class="info-senha">123456</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- ul id="lista-usuarios">
+                        <li class="usuario"></li>
+                    </ul -->
+                </div>
+            </section>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="./pesquisa.js"></script>
 </body>
 </html>
