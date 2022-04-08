@@ -1,25 +1,15 @@
 
-var buscarUsuarios = document.querySelector("#buscar-usuarios")
+var buscarUsuarios = document.querySelector("#button-addon2")
 
 buscarUsuarios.addEventListener("click", function(){
-    console.log(buscarUsuarios);
-
-    var xhr = new XMLHttpRequest();
-
-    xhr.open("GET", "localhost:3333/users")
-
-    xhr.addEventListener("load", function(){
-        var resposta = xhr.responseText;
-        var usuarios = JSON.parse(resposta);
-
-        usuarios.forEach(function(usuario){
-        
-        montaTr(usuario)
-
+    const urlUsuarios = "http://localhost:3333/users";
+    fetch(urlUsuarios, {method:"GET", mode:"no-cors"}) //usar o "params" para trazer as informações do backend
+    .then(function(resposta){
+        resposta.text().then(function(resposta){
+            console.log(resposta);
         })
     })
-
-    xhr.send();
+    //ERRO DE CORS
 })
 
 
