@@ -1,35 +1,31 @@
-header {
-    background-color: orange;
-}
-
-nav li{
-    display: inline-block;
-    margin-left: 20px;
-}
-
-.barra-pesquisa {
-    position: relative;
-    width: 540px;
-    margin: 0 auto;
-}
-
-.barra input{
-    display: inline;
-    position: relative;
-    width: 750px;
-}
-
-section {
-    display: inline;
-
-}
-
 #pesquisa-filtro {
     display: inline-block;
     padding: 0 10px;
 }
-#pesquisa-filtro li{
-    display: inline;
+
+.card-largura{
+    max-width: 18rem;
+}
+
+.borda-cor-especial{
+    border-color: darkred;
+}
+
+.botao-cor-especial{
+    background-color: darkred;
+    color: white;
+}
+
+.card-posicao-imagem{
+    object-fit: cover;
+    /*object-position: 0 80%;*/
+    height: 200px;
+}
+
+.card-posicao-imagem1{
+    object-fit: cover;
+    object-position: 0 10%;
+    height: 200px;
 }
 
 #pesquisa-perfis {
@@ -47,8 +43,4 @@ section {
 
 .nome-categorias{
     margin: 5px;
-}
-
-.list-group{
-    width: 800px;
 }

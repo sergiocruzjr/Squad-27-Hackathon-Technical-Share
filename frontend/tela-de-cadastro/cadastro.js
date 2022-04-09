@@ -1,5 +1,14 @@
 var botaoCadastrar = document.querySelector("#finalizar-cadastro");
-botaoCadastrar.addEventListener("click", 
+
+var buscarUsuarios = document.querySelector("#button-addon2")
+
+buscarUsuarios.addEventListener("click", function(){
+    const urlUsuarios = "";
+    fetch(urlUsuarios, {method:"POST", mode:"no-cors", params:usuario})
+
+
+
+/*botaoCadastrar.addEventListener("click", 
 function(event){
     event.preventDefault();
     var form = document.querySelector("#form-cadastro")
@@ -8,7 +17,7 @@ function(event){
     var usuario = obtemUsuarioCadastrado(form)
 
     //cria tr e td do usuario
-    var usuarioTr = montaTr(usuario)
+    var usuarioTr = montaTr(usuario)*/
 
 
     form.reset();
@@ -25,7 +34,7 @@ function obtemUsuarioCadastrado(form){
 }
 
 
-var enviarUsuarios = document.querySelector("#finalizar-cadastro")
+/*var enviarUsuarios = document.querySelector("#finalizar-cadastro")
 
 enviarUsuarios.addEventListener("click", function(){
     console.log(enviarUsuarios);
@@ -42,10 +51,10 @@ enviarUsuarios.addEventListener("click", function(){
         
 
         })
-    })*/
+    })
 
     xhr.send();
-})
+})*/
 
 
 function montaTr(usuario) {

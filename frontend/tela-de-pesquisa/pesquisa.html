@@ -52,7 +52,21 @@
             <input type="text" class="form-control" placeholder="Encontre um sangue laranja" aria-label="Encontre um sangue laranja" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" type="button" id="button-addon2">Pesquisar</button>
         </div>
-            <section>
+
+        <div class="btn-group d-flex justify-content-center m-4 px-5" role="group" aria-label="Basic checkbox toggle button group">
+            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+            <label class="btn btn-outline-primary m-2" for="btncheck1">Todos</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+            <label class="btn btn-outline-primary m-2" for="btncheck1">Devs</label>
+          
+            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+            <label class="btn btn-outline-primary m-2" for="btncheck2">UX Design</label>
+          
+            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+            <label class="btn btn-outline-primary m-2" for="btncheck3">Scrum Master</label>
+          </div>
+            <!--section>
                 <div id="pesquisa-filtro">
                     <div class="filtro-categorias">
                         <p class="nome-categorias">Área de atuação</p>
@@ -157,19 +171,39 @@
                         </div>
                     </div>
                 </div>
+            </section -->
+
+            <section class="container-fluid bg-light">
+                <div class="row justify-content-start">
+                  <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
+                    <img src="../img/perfil-ex1.jpg" class="card-img-top card-posicao-imagem1" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Juliana Almeira</h5>
+                      <p class="card-text">Desenvolvedor</p>
+                      <a href="#" class="btn botao-cor-especial">Ver perfil</a>
+                    </div>
+                  </article>
+
+                  <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4" >
+                    <img src="../img/perfil-ex2.jpg" class="card-img-top card-posicao-imagem" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Pedro Henquique</h5>
+                      <p class="card-text">UX Design</p>
+                      <a href="#" class="btn botao-cor-especial">Ver perfil</a>
+                    </div>
+                  </article>
+                  
+                  <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4" >
+                    <img src="../img/perfil-ex3.jpg" class="card-img-top card-posicao-imagem" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Mariana Silva</h5>
+                      <p class="card-text">Scrum Master</p>
+                      <a href="#" class="btn botao-cor-especial">Ver perfil</a>
+                    </div>
+                  </article>
             </section>
 
-            <section>
-                <div id="pesquisa-perfis">
-                    <ul class="list-group">
-                        <li class="list-group-item" aria-current="true">An active item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                        <li class="list-group-item">A fourth item</li>
-                        <li class="list-group-item">And a fifth one</li>
-                    </ul>
-
-                    <table>
+                    <!--table>
                         <thead>
                             <tr>
                                 <th>Nome</th>
@@ -185,16 +219,12 @@
                             </tr>
                         </tbody>
                     </table>
-                    <!-- ul id="lista-usuarios">
+                    < ul id="lista-usuarios">
                         <li class="usuario"></li>
                     </ul -->
-                </div>
-            </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="./pesquisa.js"></script>
 </body>
 </html>
