@@ -32,28 +32,39 @@ async function createUserAuth(email: string, password: string) : Promise<boolean
     //TODO -> enviar para a página de login
 }
 
-async function signInUserAuth(email: string, password: string){
+async function signInUserAuth(email: string, password: string): Promise<boolean>{
+    let success = false;
+
     await signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const { user } = userCredential;
             console.log(`${user.email} logou com sucesso`)
+
+            success = true;
         })
         .catch((error) => {
             const { code, message } = error;
             console.log(`Houve um erro ${code}:\n${message}`);
         })
+
+    return success;
     //TODO -> enviar para o dashboard
 }
 
-async function signOutUserAuth(){
+async function signOutUserAuth(): Promise<boolean>{
+    let success = false;
+
     await signOut(auth)
         .then(() => {
             console.log(`O usuário se deslogou com sucesso`);
+            success = true;
         })
         .catch((error) => {
             const { code, message } = error;
             console.log(`Houve um erro ${code}:\n${message}`);
         })
+
+    return success;
     //TODO -> enviar para a página de login
 }
 

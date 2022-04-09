@@ -2,17 +2,25 @@ import { remove, update } from 'firebase/database';
 import { database, set, ref, get, child } from './database/firebase-connection';
 
 async function createUser(name: string, username: string){
-    const referencePath = '/users/'+username+'/';
+    const referencePath = `/users/${username}/`;
 	const userReference = ref(database, referencePath);
+
+    const knowledges = {
+        0: '',
+    };
+    const meetings = {
+        0: '',
+    };
 
     await set(userReference, {
         name,
-        created_at: new Date(),
+        knowledges,
+        meetings,
     });
 }
 
 async function getAllUsers(){
-    let users;
+    let users: any;
 
     const referencePath = '/users/';
     const userReference = ref(database, referencePath);
