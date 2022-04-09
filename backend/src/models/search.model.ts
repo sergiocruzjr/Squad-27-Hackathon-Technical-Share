@@ -16,7 +16,7 @@ async function searchUserByName(name: string): Promise<string>{
     
     const userFound = userInformationsArray.find(user => user.name === name);
 
-    if(userFound !== undefined) return userFound.name;
+    if(userFound !== undefined) return userFound;
     else return '';
 }
 
