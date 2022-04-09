@@ -6,7 +6,7 @@ async function httpSearchUserByName(request: Request, response: Response){
 
     const userData = await searchUserByName(name.toString());
 
-    if(userData !== '') return response.status(200).json({ userData });
+    if(userData.length !== 0) return response.status(200).json({ userData });
     else return response.status(400).json({
         error: 'Nome não encontrado'
     })

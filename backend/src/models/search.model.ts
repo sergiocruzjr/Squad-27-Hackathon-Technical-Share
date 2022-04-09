@@ -1,6 +1,6 @@
 import { database, set, ref, get, child } from './database/firebase-connection';
 
-async function searchUserByName(name: string): Promise<string>{
+async function searchUserByName(name: string): Promise<string[]>{
     const databaseRef = ref(database);
     let userInformationsArray = new Array();
     
@@ -14,10 +14,10 @@ async function searchUserByName(name: string): Promise<string>{
             userIDsArray.forEach(user => userInformationsArray.push(user[1]));
         });
     
-    const userFound = userInformationsArray.find(user => user.name === name);
+    const userFound = userInformationsArray.filter(user => String(user.name).includes(name));
 
     if(userFound !== undefined) return userFound;
-    else return '';
+    else return [];
 }
 
 async function searchUsersByKnowledges(knowledges: Array<string>){
