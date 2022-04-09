@@ -8,7 +8,7 @@ import { createUser } from './users.model';
 const auth = getAuth();
 
 //! Criando um novo usuário no 'auth'
-async function createUserAuth(email: string, password: string) : Promise<boolean>{
+async function createUserAuth(email: string, password: string, knowledges: Array<string>) : Promise<boolean>{
     let success = false;
     
     await createUserWithEmailAndPassword(auth, email, password)
@@ -17,8 +17,8 @@ async function createUserAuth(email: string, password: string) : Promise<boolean
                 const { user } = userCredential;
                 console.log(`email: ${user.email}\nuid: ${user.uid}`);
 
-                const { email, uid } = user; 
-                await createUser(email, uid);
+                const { uid, email } = user; 
+                await createUser(uid, email, knowledges);
 
                 success = true;
             }

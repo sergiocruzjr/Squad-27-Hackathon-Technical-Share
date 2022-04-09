@@ -1,13 +1,10 @@
 import { remove, update } from 'firebase/database';
 import { database, set, ref, get, child } from './database/firebase-connection';
 
-async function createUser(name: string, username: string){
-    const referencePath = `/users/${username}/`;
+async function createUser(userID: string, name: string, knowledges: Array<string>){
+    const referencePath = `/users/${userID}/`;
 	const userReference = ref(database, referencePath);
 
-    const knowledges = {
-        0: '',
-    };
     const meetings = {
         0: '',
     };
