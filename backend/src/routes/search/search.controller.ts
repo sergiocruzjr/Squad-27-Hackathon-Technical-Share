@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { searchUserByName } from '../../models/search.model';
+import { searchUserByName, searchUsersByKnowledges } from '../../models/search.model';
 
 async function httpSearchUserByName(request: Request, response: Response){
     const { name } = request.body;
@@ -12,6 +12,15 @@ async function httpSearchUserByName(request: Request, response: Response){
     })
 }
 
+async function httpSearchUsersByKnowledges(request: Request, response: Response){
+    const { knowledges } = request.body;
+
+    await searchUsersByKnowledges(knowledges);
+
+    return response.status(200).send();
+}
+
 export {
     httpSearchUserByName,
+    httpSearchUsersByKnowledges,
 }
