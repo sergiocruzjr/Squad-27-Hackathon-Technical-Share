@@ -4,9 +4,9 @@ import { createUserAuth } from '../../models/auth.model'
 
 //! Método POST - Criando um usuário no banco de dados e authentication do Firebase
 async function httpCreateUser(request: Request, response: Response){
-    const { email, password, knowledges } = request.body;
+    const { name, email, password, knowledges } = request.body;
     //? Se não houver nenhum problema retorna 'true'
-    const statusResponse = await createUserAuth(email, password, knowledges);
+    const statusResponse = await createUserAuth(name, email, password, knowledges);
 
     //? Retornando status 201 - CREATED ou 400 - BAD REQUEST
     if(statusResponse) return response.status(201).send();
