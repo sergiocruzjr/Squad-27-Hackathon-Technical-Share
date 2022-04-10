@@ -20,7 +20,7 @@ async function searchUserByName(name: string): Promise<string[]>{
     else return [];
 }
 
-async function searchUsersByKnowledges(knowledges: Array<string>){
+async function searchUsersByKnowledges(knowledges: Array<string>): Promise<string[]>{
     const databaseRef = ref(database);
     let userInformationsArray = new Array();
     
@@ -34,14 +34,17 @@ async function searchUsersByKnowledges(knowledges: Array<string>){
             userIDsArray.forEach(user => userInformationsArray.push(user[1]));
         });
 
-    let usersFound: Array<string>;
-    //console.log(knowledges);
+    let usersFound = [];
 
-    for(const knowledge of knowledges){
-        //console.log(knowledge);
-        usersFound = userInformationsArray.map(user => user.knowledges);
+    for (let i=0; i < userInformationsArray.length; i++){
+        if(userInformationsArray[i].knowledges.some(knowledge => knowledges.includes(knowledge))){
+            usersFound.push(userInformationsArray[i]);
+        }
     }
-    console.log(usersFound);
+
+    //console.log(knowledges);
+    if(usersFound !== undefined) return usersFound;
+    else return [];
 }
 
 export {

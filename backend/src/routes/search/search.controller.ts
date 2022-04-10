@@ -13,11 +13,21 @@ async function httpSearchUserByName(request: Request, response: Response){
 }
 
 async function httpSearchUsersByKnowledges(request: Request, response: Response){
-    const { knowledges } = request.body;
+    const { knowledges } = request.query;
+    let knowledgesSearch = [];
+    
+    if(knowledges. length > 0){
+        for(let i=0; i < knowledges.length; i++){
+            knowledgesSearch.push(knowledges[i]);
+        }     
+    }
 
-    await searchUsersByKnowledges(knowledges);
+    const usersData = await searchUsersByKnowledges(knowledgesSearch);
 
-    return response.status(200).send();
+    if(usersData.length !== 0) return response.status(200).json({ usersData });
+    else return response.status(400).json({
+        error: 'Nome não encontrado'
+    })
 }
 
 export {
