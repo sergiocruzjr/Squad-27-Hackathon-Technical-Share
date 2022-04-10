@@ -8,6 +8,8 @@ import usersRouter from './users/users.router';
 import authRouter from './auth/auth.router';
     //? Router de search
 import searchRouter from './search/search.router';
+    //? Router meetings
+import meetingsRouter from './meetings/meetings.router';
 
 //! Definindo router da API
 const api = express.Router();
@@ -19,6 +21,8 @@ api.use('/users', usersRouter);
 api.use('/auth', authRouter);
     //* Busca
 api.use('/search', searchRouter);
+    //* Reuniões
+api.use('/meetings', meetingsRouter);
 
 //! Exportando api
 export = api;
