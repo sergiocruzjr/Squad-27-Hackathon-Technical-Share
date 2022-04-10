@@ -1,0 +1,43 @@
+@import "bootstrap.css";
+
+/* login */
+
+.login-wrapper {
+    display: flex;
+}
+
+.left {
+    height: 100vh;
+    
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left .logo {
+    width: 275px;
+    margin: 0 0 30px 0;
+}
+
+.left form {
+    width: 275px;
+}
+
+.left .login-form .actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left .login-form .actions a {
+    color: var(--bs-secondary);
+    text-decoration: none;
+    font-size: 0.7rem;
+}
+
+.right {
+    height: 100vh;
+    background-color: #BBB;
+}
