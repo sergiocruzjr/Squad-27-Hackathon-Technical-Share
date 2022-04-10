@@ -1,0 +1,46 @@
+#pesquisa-filtro {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.card-largura{
+    max-width: 18rem;
+}
+
+.borda-cor-especial{
+    border-color: darkred;
+}
+
+.botao-cor-especial{
+    background-color: darkred;
+    color: white;
+}
+
+.card-posicao-imagem{
+    object-fit: cover;
+    /*object-position: 0 80%;*/
+    height: 200px;
+}
+
+.card-posicao-imagem1{
+    object-fit: cover;
+    object-position: 0 10%;
+    height: 200px;
+}
+
+#pesquisa-perfis {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.filtro-categorias{
+    margin-top: 20px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+}
+
+.nome-categorias{
+    margin: 5px;
+}

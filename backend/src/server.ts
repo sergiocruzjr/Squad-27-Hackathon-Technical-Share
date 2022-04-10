@@ -1,5 +1,20 @@
-import express from 'express';
+//! Importando HTTP, dotenv e app
+import http from 'http';
+import dotenv from 'dotenv';
+    dotenv.config();
+import app from './app'
 
-const app = express();
+const PORT = process.env.PORT;
 
-app.listen(3333, () => console.log("Servidor está rodando..."));
+//! Definindo o servidor
+const server = http.createServer(app);
+
+//? Função para inicializar o servidor
+function startServer(){
+    server.listen(PORT, () => {
+        console.log(`Listening server on PORT ${PORT}`);
+    })
+}
+
+//! Inicializando o servidor
+startServer();
