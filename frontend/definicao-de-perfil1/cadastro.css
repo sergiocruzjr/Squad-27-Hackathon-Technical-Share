@@ -1,0 +1,43 @@
+.borda-nav{
+    border-bottom: 1px solid #E3E3E3;
+    margin: 0 0 50px 0;
+}
+
+body{
+    background-color: #EBEBEB;
+}
+
+.botao{
+    background-color: #707070;
+    color: #ffffff;
+}
+
+.botao:hover{
+    background-color: orange;
+    color: #ffffff;
+}
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.primeira-section {
+    width: 750px;
+}
+
+.segunda-section {
+    background-color: #ffffff;
+    width: 750px;
+}
+
+.perfil-informacoes{
+    display: inline-block;
+}
+
+
