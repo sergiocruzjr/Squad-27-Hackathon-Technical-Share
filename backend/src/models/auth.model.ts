@@ -32,22 +32,24 @@ async function createUserAuth(name: string, email: string, password: string, kno
     //TODO -> enviar para a página de login
 }
 
-async function signInUserAuth(email: string, password: string): Promise<boolean>{
-    let success = false;
+async function signInUserAuth(email: string, password: string): Promise<JSON>{
+    let response;
 
     await signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const { user } = userCredential;
             console.log(`${user.email} logou com sucesso`)
 
-            success = true;
+            response = user;
         })
         .catch((error) => {
             const { code, message } = error;
+
+            response = {code, message};
             console.log(`Houve um erro ${code}:\n${message}`);
         })
-
-    return success;
+        
+    return response;
     //TODO -> enviar para o dashboard
 }
 

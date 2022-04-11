@@ -7,7 +7,7 @@ import { httpSignInUser, httpSignOutUser } from './auth.controller'
 const authRouter = express.Router();
 
 //? Método POST - Login de usuário
-    authRouter.post('/login', httpSignInUser);
+    authRouter.put('/login', httpSignInUser);
 //? Método GET - Logout de usuário
     authRouter.get('/logout', httpSignOutUser);
 
