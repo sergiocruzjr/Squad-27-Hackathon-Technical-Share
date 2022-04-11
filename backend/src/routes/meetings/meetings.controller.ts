@@ -13,6 +13,12 @@ async function httpCreateNewMeeting(request: Request, response: Response){
     await createNewMeeting(userId, guestName, subject, date);
 
     //* Retornar response ao usuário
+    return response.status(200).json({
+        guestName,
+        subject,
+        date,
+        userId,
+    })
 }
 
 //? Método PATCH - "deletando reunião" trocando a variável 'upcoming' para false
