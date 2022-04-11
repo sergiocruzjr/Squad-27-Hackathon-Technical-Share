@@ -1,41 +1,46 @@
-header {
-    background-color: orange;
-}
-
-nav li{
-    display: inline-block;
-    margin-left: 20px;
-}
-
-.barra {
-    display: inline-block;
-    position: relative;
-    width: 940px;
-    margin: 0 auto;
-}
-
-.barra input{
-    display: inline-block;
-    position: relative;
-    width: 750px;
-}
-
-section {
-    display: inline-block;
-}
-
 #pesquisa-filtro {
     display: inline-block;
-    background-color: rgb(226, 223, 223);
     padding: 0 10px;
 }
-#pesquisa-filtro li{
-    display: inline;
+
+.card-largura{
+    max-width: 18rem;
+}
+
+.borda-cor-especial{
+    border-color: darkred;
+}
+
+.botao-cor-especial{
+    background-color: darkred;
+    color: white;
+}
+
+.card-posicao-imagem{
+    object-fit: cover;
+    /*object-position: 0 80%;*/
+    height: 200px;
+}
+
+.card-posicao-imagem1{
+    object-fit: cover;
+    object-position: 0 10%;
+    height: 200px;
 }
 
 #pesquisa-perfis {
     display: inline-block;
     vertical-align: top;
-    background-color: rgb(245, 243, 239);
+    margin-top: 20px;
     padding: 0 10px;
+}
+
+.filtro-categorias{
+    margin-top: 20px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+}
+
+.nome-categorias{
+    margin: 5px;
 }
