@@ -23,6 +23,7 @@ async function createNewMeeting(userId: string, guestName: string, subject: stri
     const meetingReference = ref(database, referencePath);
     
     await set(meetingReference, {
+        meetingId,
         userId,
         guestId: userInformationArray[0],
         subject,
@@ -86,6 +87,8 @@ async function deleteMeeting(meetingId: string, userId: string, guestId: string)
 
         await remove(userRef);
     }
+
+
 
 //! Exportar as funções
 export {

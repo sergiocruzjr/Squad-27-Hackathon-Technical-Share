@@ -17,7 +17,7 @@ const searchRouter = express.Router();
 //? Método GET - Busca por todas reuniões
     searchRouter.get('/meetings', httpSearchMeetings);
 //? Método GET - Busca por todas reuniões
-    searchRouter.get('/meetings/:id', httpSearchMeetingsById);
+    searchRouter.get('/meetings/:meetingsId', httpSearchMeetingsById);
 
 //! Exportando router
 export = searchRouter;

@@ -65,8 +65,29 @@ async function searchMeetings(): Promise<string[]>{
     else return [];
 }
 
+async function searchMeetingsById(meetingsId: string): Promise<string[]>{
+    const databaseRef = ref(database);
+    let meetingsInformationsArray = new Array();
+    
+    await get(child(databaseRef, 'meetings'))
+        .then(snapshot => {
+            //? Coletando o objeto que contém os dados dos usuários
+            const meetingsIDsObject = snapshot.val();
+            //? Transformando o objeto em array
+            const meetingsIDsArray = Object.entries(meetingsIDsObject);
+            //? Pegando apenas os dados de cada usuário
+            meetingsIDsArray.forEach(meetings => meetingsInformationsArray.push(meetings[1]));
+        });
+    
+    const meetingsFound = meetingsInformationsArray.find(meetings => String(meetings.meetingId) === meetingsId);
+
+    if(meetingsFound !== undefined) return meetingsFound;
+    else return [];
+}
+
 export {
     searchUserByName,
     searchUsersByKnowledges,
     searchMeetings,
+    searchMeetingsById,
 }

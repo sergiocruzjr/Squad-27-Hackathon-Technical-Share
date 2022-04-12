@@ -1,5 +1,9 @@
 import { Request, Response } from "express";
-import { searchUserByName, searchUsersByKnowledges, searchMeetings } from '../../models/search.model';
+import { searchUserByName,
+         searchUsersByKnowledges,
+         searchMeetings,
+         searchMeetingsById
+         } from '../../models/search.model';
 
 async function httpSearchUserByName(request: Request, response: Response){
     const { name } = request.query;
@@ -38,6 +42,17 @@ async function httpSearchMeetings(request: Request, response: Response){
     if(meetingsData.length !== 0) return response.status(200).json({ meetingsData });
     else return response.status(400).json({
         error: 'Nenhuma reunião cadastrada'
+    })
+}
+
+async function httpSearchMeetingsById(request: Request, response: Response){
+    const { meetingsId } = request.params;
+
+    const meetingsData = await searchMeetingsById(meetingsId.toString());
+
+    if(meetingsData.length !== 0) return response.status(200).json({ meetingsData });
+    else return response.status(400).json({
+        error: 'Meeting não encontrada'
     })
 }
 
