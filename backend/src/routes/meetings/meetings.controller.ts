@@ -25,6 +25,7 @@ async function httpCreateNewMeeting(request: Request, response: Response){
 async function httpDeleteMeeting(request: Request, response: Response){
     const { id } = request.params;
     const { userId, guestId } = request.body;
+    //TODO: Procurar o userId e guestId e não receber pelo body 
 
     //* Deletando a reunião
         //TODO Fazer alguma forma de retornar algum tipo de sucesso/erro

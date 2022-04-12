@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { searchUserByName, searchUsersByKnowledges } from '../../models/search.model';
+import { searchUserByName, searchUsersByKnowledges, searchMeetings } from '../../models/search.model';
 
 async function httpSearchUserByName(request: Request, response: Response){
     const { name } = request.query;
@@ -30,7 +30,20 @@ async function httpSearchUsersByKnowledges(request: Request, response: Response)
     })
 }
 
+async function httpSearchMeetings(request: Request, response: Response){
+    const { name } = request.query;
+
+    const meetingsData = await searchMeetings();
+
+    if(meetingsData.length !== 0) return response.status(200).json({ meetingsData });
+    else return response.status(400).json({
+        error: 'Nenhuma reunião cadastrada'
+    })
+}
+
 export {
     httpSearchUserByName,
     httpSearchUsersByKnowledges,
+    httpSearchMeetings,
+    httpSearchMeetingsById,
 }

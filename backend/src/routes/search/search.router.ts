@@ -1,7 +1,11 @@
 //! Importando o express
 import express from 'express';
 //! Importando o controller
-import { httpSearchUserByName, httpSearchUsersByKnowledges } from './search.controller';
+import { httpSearchUserByName,
+         httpSearchUsersByKnowledges,
+         httpSearchMeetings,
+         httpSearchMeetingsById 
+        } from './search.controller';
 
 //! Definindo o router de pesquisas
 const searchRouter = express.Router();
@@ -10,6 +14,10 @@ const searchRouter = express.Router();
     searchRouter.get('/name', httpSearchUserByName);
 //? Método GET - Busca por conhecimentos
     searchRouter.get('/knowledges', httpSearchUsersByKnowledges);
+//? Método GET - Busca por todas reuniões
+    searchRouter.get('/meetings', httpSearchMeetings);
+//? Método GET - Busca por todas reuniões
+    searchRouter.get('/meetings/:id', httpSearchMeetingsById);
 
 //! Exportando router
 export = searchRouter;
