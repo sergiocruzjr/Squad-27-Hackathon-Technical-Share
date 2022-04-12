@@ -9,7 +9,7 @@ const meetingsRouter = express.Router();
 //? Método POST - Criando reunião
     meetingsRouter.post('/:userId', httpCreateNewMeeting);
 //? Método PATCH - Deletando reunião
-    meetingsRouter.patch('/:id', httpDeleteMeeting);
+    meetingsRouter.delete('/:id', httpDeleteMeeting);
 
 //! Exportando router
 export = meetingsRouter;

@@ -21,15 +21,19 @@ async function httpCreateNewMeeting(request: Request, response: Response){
     })
 }
 
-//? Método PATCH - "deletando reunião" trocando a variável 'upcoming' para false
+//? Método DELETE - deletando reunião
 async function httpDeleteMeeting(request: Request, response: Response){
     const { id } = request.params;
+    const { userId, guestId } = request.body;
 
     //* Deletando a reunião
         //TODO Fazer alguma forma de retornar algum tipo de sucesso/erro
-    await deleteMeeting(id);
+    await deleteMeeting(id, userId, guestId);
 
     //* Retornar response ao usuário
+    return response.status(200).json({
+        message: `A reunião ${id} foi removida e os dados dos usuários atualizados`
+    });
 }
 
 export {
