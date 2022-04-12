@@ -2,6 +2,8 @@
 import { Request, Response } from "express";
 //! Importar model de 'meetings'
 import { createNewMeeting, deleteMeeting } from '../../models/meetings.model';
+//! Importar search de meeting por id
+import { searchMeetingsById } from '../../models/search.model';
 
 //? Método POST - criando nova reunião
 async function httpCreateNewMeeting(request: Request, response: Response){
@@ -23,17 +25,21 @@ async function httpCreateNewMeeting(request: Request, response: Response){
 
 //? Método DELETE - deletando reunião
 async function httpDeleteMeeting(request: Request, response: Response){
-    const { id } = request.params;
-    const { userId, guestId } = request.body;
+    const { meetingsId } = request.params;
+
+    const meeting = await searchMeetingsById(meetingsId);
+    const userId = meeting['userId'];
+    const guestId = meeting['guestId'];
+
     //TODO: Procurar o userId e guestId e não receber pelo body 
 
     //* Deletando a reunião
         //TODO Fazer alguma forma de retornar algum tipo de sucesso/erro
-    await deleteMeeting(id, userId, guestId);
+    await deleteMeeting(meetingsId, userId, guestId);
 
     //* Retornar response ao usuário
     return response.status(200).json({
-        message: `A reunião ${id} foi removida e os dados dos usuários atualizados`
+        message: `A reunião ${meetingsId} foi removida e os dados dos usuários atualizados`
     });
 }
 
