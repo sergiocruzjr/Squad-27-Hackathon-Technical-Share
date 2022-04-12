@@ -1,5 +1,5 @@
 //! Importar funções do Firebase para criação de collection de meetings
-import { update } from 'firebase/database';
+import { update, push } from 'firebase/database';
 import { database, set, ref, get, child } from './database/firebase-connection';
 
 async function createNewMeeting(userId: string, guestName: string, subject: string, date: Date){
@@ -28,17 +28,8 @@ async function createNewMeeting(userId: string, guestName: string, subject: stri
         //* date       -> Date()
         //* upcoming   -> boolean
     
-    let meetingsObject: Object;
-    let meetingId: Number;
-    
-    //? Definindo a ID da collection de reuniões
-    await get(child(databaseRef, 'meetings'))
-        .then(snapshot => {
-            meetingsObject = snapshot.val();
-            (meetingsObject !== null) ?
-                meetingId = (Object.keys(meetingsObject).length) + 1 :
-                meetingId = 1;
-        })
+    //? Definindo a ID da reunião
+    let meetingId = push(child(ref(database), 'meetings')).key;
 
     //? Definindo a collection de 'meetings'
     const referencePath = `meetings/${meetingId}`;
@@ -52,7 +43,20 @@ async function createNewMeeting(userId: string, guestName: string, subject: stri
         upcoming: true,
     });
 
+    //TODO Fazer função local
+    //TODO --> updateUserMeeting(userId, meetingId, userType)
     //? Na collection 'users' -> UPDATE meetings:  { 0: { meetingId: x, isGuest: true/false } }
+    const referenceUserPath = `users/${userId}/meetings/${meetingId}`;
+    const referenceGuestPath = `users/${userInformationArray[0]}/meetings/${meetingId}`;
+    const userReference = ref(database, referenceUserPath);
+    const guestReference = ref(database, referenceGuestPath);
+    
+    await update(userReference, {
+        type: 'host'
+    })
+    await update(guestReference, {
+        type: 'guest'
+    })
 }
 
 async function deleteMeeting(meetingId: string){

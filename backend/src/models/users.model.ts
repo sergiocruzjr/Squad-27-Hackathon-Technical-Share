@@ -5,15 +5,15 @@ async function createUser(name: string, userID: string, email: string, knowledge
     const referencePath = `/users/${userID}/`;
 	const userReference = ref(database, referencePath);
 
-    const meetings = {
-        0: '',
-    };
+    // const meetings = {
+    //     0: '',
+    // };
 
     await set(userReference, {
         name,
         email,
         knowledges,
-        meetings,
+        //meetings,
     });
 }
 
