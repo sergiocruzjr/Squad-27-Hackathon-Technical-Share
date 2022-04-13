@@ -7,6 +7,7 @@ async function httpSignInUser(request: Request, response: Response){
 
     console.log(statusResponse);
 
+    //? Tratamento de erros
     switch(statusResponse['code']){
         case 'auth/invalid-email':
             return response.status(400).json({error: "Email inválido"});
@@ -15,16 +16,6 @@ async function httpSignInUser(request: Request, response: Response){
         case 'auth/user-not-found':
             return response.status(404).json({error: "Usuário não encontrado"});
     }
-
-    // if(statusResponse['code'] == 'auth/invalid-email'){
-    //     return response.status(400).json({error: "Email inválido"});
-    // }
-    // if(statusResponse['code'] == 'auth/wrong-password'){
-    //     return response.status(401).json({error: "Senha errada"});
-    // }
-    // if(statusResponse['code'] == 'auth/user-not-found'){
-    //     return response.status(404).json({error: "Usuário não encontrado"});
-    // }
 
     //? Retornando status 200 - SUCCESS ou 400 - BAD REQUEST
     if(statusResponse['uid']) {
