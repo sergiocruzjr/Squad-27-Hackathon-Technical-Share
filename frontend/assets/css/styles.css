@@ -1,14 +1,25 @@
-@import "bootstrap.css";
+@import "./bootstrap.css";
+@import "./colors.css";
+@import "./fonts.css";
 
-/* login */
+/************************
+ ******** Global ******** 
+ ************************/
 
-.login-wrapper {
+
+/************************
+ ******** login ********* 
+ ************************/
+
+.login {
     display: flex;
+    width: 100%
 }
 
 .left {
     height: 100vh;
-    
+    max-width: 817px;
+
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -16,12 +27,48 @@
 }
 
 .left .logo {
-    width: 275px;
+    max-width: 275px;
+    width: 100%;
+
     margin: 0 0 30px 0;
 }
 
 .left form {
-    width: 275px;
+    /*width: 275px;*/
+}
+
+.left form .input-wrapper {
+    width: 452px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid var(--fc-gray-01);
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 3px;
+}
+
+.left form .input-wrapper img {
+    width: 27px;
+    height: 27px;
+    margin-right: 20px;
+}
+
+.left form .input-wrapper input {
+    width: 452px;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+    padding-left: 5px;
+}
+
+input:focus {
+    border: none;
+    border-color: none;
+    box-shadow: none;
 }
 
 .left .login-form .actions {
@@ -29,15 +76,57 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 41px;
+}
+
+.left .login-form .actions button {
+    background-color: var(--fc-orange-03);
+    color: var(--fc-white);
+    border-radius: 10px;
+    width: 140px;
+    height: 60px;
 }
 
 .left .login-form .actions a {
-    color: var(--bs-secondary);
+    color: var(--fc-orange-03);
     text-decoration: none;
     font-size: 0.7rem;
 }
 
+.separator {
+    width: 452px;
+    height: 1px;
+    background-color: var(--fc-gray-01);
+    margin: 45px 0;
+}
+
+a.btn-signup {
+    border: 1px solid var(--fc-orange-03);
+    color: var(--fc-orange-03);
+    width: 452px;
+    height: 60px;
+}
+
+a.btn-signup:hover {
+    color: var(--fc-orange-03);
+    cursor: pointer;
+}
+
 .right {
     height: 100vh;
-    background-color: #BBB;
+    background-color: var(--fc-light-orange-01);
+
+    display: flex;
+    align-items: center;
+    justify-content:center; 
+}
+
+.right .images-wrapper {
+    width: 815px;
+    height: 842px;
+    margin-top: 135px;
+    margin-left: 160px;
+    margin-right: 130px;
+    margin-bottom: 102px;
+    background-color: #FFF6F3;
 }
