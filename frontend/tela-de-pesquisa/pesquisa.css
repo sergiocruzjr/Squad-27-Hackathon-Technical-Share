@@ -1,5 +1,10 @@
 body{
+    background-color: #FFF6F3;
     font-family: "Segoe UI";
+}
+
+nav{
+    background-color: #FFF6F3;
 }
 
 #pesquisa-filtro {
@@ -7,29 +12,36 @@ body{
     padding: 0 10px;
 }
 
+.botao-label{
+    font-size: 28px;
+    border: 1px solid #FF4500;
+    color: #000000;
+    opacity: 1;
+}
+
+.botao-label:hover{
+    background-color: #FF4500;
+    font-size: 28px;
+    border: 1px solid #FF4500;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
 .card-largura{
     max-width: 18rem;
 }
 
 .borda-cor-especial{
-    border-color: #707070;
+    border-color: #FF4500;
 }
 
 .botao-cor-especial{
-    background-color: #707070;
+    background-color: #FF4500;
     color: white;
-}
-
-.botao-label{
-    font-size: 28px;
-    border: 1px solid #707070;
-    border-radius: 10px;
-    opacity: 1;
 }
 
 .card-posicao-imagem{
     object-fit: cover;
-    /*object-position: 0 80%;*/
     height: 200px;
 }
 
