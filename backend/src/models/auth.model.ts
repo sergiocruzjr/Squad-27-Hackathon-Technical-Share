@@ -32,6 +32,7 @@ async function createUserAuth(name: string, email: string, password: string, kno
     //TODO -> enviar para a página de login
 }
 
+//! Fazendo o login do usuário
 async function signInUserAuth(email: string, password: string): Promise<JSON>{
     let response;
 
@@ -53,6 +54,7 @@ async function signInUserAuth(email: string, password: string): Promise<JSON>{
     //TODO -> enviar para o dashboard
 }
 
+//! Fazendo o logout do usuário
 async function signOutUserAuth(): Promise<boolean>{
     let success = false;
 
@@ -70,8 +72,19 @@ async function signOutUserAuth(): Promise<boolean>{
     //TODO -> enviar para a página de login
 }
 
+//! Verificando se usuário está logado
+async function verifyUserLogin(): Promise<boolean>{
+    const user = auth.currentUser;
+    let success = false;
+
+    (user) ? success = true : null;
+
+    return success;
+}
+
 export {
     createUserAuth,
     signInUserAuth,
     signOutUserAuth,
+    verifyUserLogin
 }
