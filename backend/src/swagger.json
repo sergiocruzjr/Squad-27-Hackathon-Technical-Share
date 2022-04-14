@@ -1,0 +1,424 @@
+{
+    "openapi": "3.0.0",
+    "info":{
+        "title": "Technical Share Documentation",
+        "description": "Documentação da plataforma Technical Share",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/users":{
+            "post":{
+                "tags": ["Users"],
+                "summary": "Cadastra usuário no banco",
+                "description": "Cadstra um usuário no sistema e suas informações",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties":{
+                                    "name":{
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "knowledges": {
+                                        "type": "array"
+                                    }
+                                    
+                                },
+                                "example": {
+                                    "name": "Fulano da Silva",
+                                    "email": "fulanodasilva@email.com",
+                                    "password": "senha123",
+                                    "knowledges": ["UI", "UX", "Dev", "Backend"]
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "201": {
+                        "description": "Criado"
+                    },
+                    "500": {
+                        "description": "Usuário já existe"
+                    }
+                }
+            },
+            "get":{
+                "tags": ["Users"],
+                "summary": "Lista de todos os usuários",
+                "description": "Retorna a lista de todos os usuários cadastrados no sistema",
+                "responses":{
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json":{
+                                "type": "array",
+                                "items":{
+                                    "type": "object",
+                                    "properties":{
+                                        "name":{
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "password": {
+                                            "type": "string"
+                                        },
+                                        "knowledges": {
+                                            "type": "array"
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put":{
+                "tags": ["Users"],
+                "summary": "Atualiza usuário no banco",
+                "description": "Atualiza o usuário substituindo as informações com as passadas no body",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties":{
+                                    "name":{
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "knowledges": {
+                                        "type": "array"
+                                    }
+                                    
+                                },
+                                "example": {
+                                    "name": "Fulano da Silva",
+                                    "email": "fulanodasilva@email.com",
+                                    "password": "senha123",
+                                    "knowledges": ["UI", "UX", "Dev", "Backend"]
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200": {
+                        "description": "Usuário atualizado"
+                    }
+                }
+            }
+        },
+        "/users/{id}":{
+            "delete": {
+                "parameters":[{
+                    "in": "path",
+                    "name": "id",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Id do usuário no banco"
+                }],
+                "tags": ["Users"],
+                "summary": "Deletar usuário",
+                "description": "Deletar um usuário pelo seu username",
+                "responses":{
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/auth/login":{
+            "put":{
+                "tags": ["Auth"],
+                "summary": "Login de usuário",
+                "description": "Verifica se o usuário está no banco e credencia ele à acessar o sistema",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties":{
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "email": "fulanodasilva@email.com",
+                                    "password": "senha123"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200": {
+                        "description": "Usuário logado"
+                    },
+                    "400": {
+                        "description": "Email inválido"
+                    },
+                    "401": {
+                        "description": "Senha errada"
+                    },
+                    "404": {
+                        "description": "Usuário não encontrado"
+                    }
+                }
+            }
+        },
+        "/auth/logout":{
+            "get":{
+                "tags": ["Auth"],
+                "summary": "Desloga usuário",
+                "description": "Descredencia o usuário previamente logado",
+                "responses":{
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/auth/verify":{
+            "get":{
+                "tags": ["Auth"],
+                "summary": "Verifica login do usuário",
+                "description": "Verifica a validez do login do usuário",
+                "responses":{
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/search/name":{
+            "get": {
+                "parameters":[{
+                    "in": "query",
+                    "name": "name",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Nome do usuário no banco"
+                }],
+                "tags": ["Users"],
+                "summary": "Procura usuário",
+                "description": "Procurar usuário pelo nome no banco e retorna lista que contenha esse nome",
+                "responses":{
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json":{
+                                "type": "array",
+                                "items":{
+                                    "type": "object",
+                                    "properties":{
+                                        "name":{
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "password": {
+                                            "type": "string"
+                                        },
+                                        "knowledges": {
+                                            "type": "array"
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Nenhum usuário com esse nome"
+                    }
+                }
+            }
+        },
+        "/search/knowledges":{
+            "get": {
+                "parameters":[{
+                    "in": "query",
+                    "name": "knowledges[]",
+                    "required": "true",
+                    "type": "array",
+                    "description": "Conhecimentos do usuário",
+                    "collectionFormat": "multi"
+                }],
+                "tags": ["Users"],
+                "summary": "Procura usuário por conhecimento",
+                "description": "Procurar usuário pelos conhecimentos listados",
+                "responses":{
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json":{
+                                "type": "array",
+                                "items":{
+                                    "type": "object",
+                                    "properties":{
+                                        "name":{
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "password": {
+                                            "type": "string"
+                                        },
+                                        "knowledges": {
+                                            "type": "array"
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Nenhum usuário com esse(s) conhecimento(s)"
+                    }
+                }
+            }
+        },
+        "/search/meetings":{
+            "get": {
+                "tags": ["Meetings"],
+                "summary": "Lista todas as reuniões",
+                "description": "Lista todas as reuniões cadastradas no sistema",
+                "responses":{
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json":{
+                                "type": "array",
+                                "items":{
+                                    "type": "object",
+                                    "properties":{
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Nenhuma reunião no sistema"
+                    }
+                }
+            }
+        },
+        "/search/meetings/{meetingsId}":{
+            "get": {
+                "parameters":[{
+                    "in": "path",
+                    "name": "meetingsId",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Id da reunião"
+                }],
+                "tags": ["Meetings"],
+                "summary": "Procura uma reunião",
+                "description": "Procura uma reunião pelo id passado",
+                "responses":{
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json":{
+                                "type": "array",
+                                "items":{
+                                    "type": "object",
+                                    "properties":{
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Nenhuma reunião no sistema com esse id"
+                    }
+                }
+            }
+        },
+        "/meetings/{userId}":{
+            "post":{
+                "parameters":[{
+                    "in": "path",
+                    "name": "userId",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Id anfitrião da reunião"
+                }],
+                "tags": ["Meetings"],
+                "summary": "Cadastra uma reunião",
+                "description": "Cadastra uma reunião no sistema marcando o usuário convidado e anfitrião",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties":{
+                                    "date":{
+                                        "type": "date"
+                                    },
+                                    "guestName": {
+                                        "type": "string"
+                                    },
+                                    "subject": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "date": "dd-mm-yyyy",
+                                    "guestName": "Nome do convidado",
+                                    "subject": "Assunto da reunião"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "201": {
+                        "description": "Criado"
+                    }
+                }
+            }
+        },
+        "/meetings/{meetingsId}":{
+            "delete":{
+                "parameters":[{
+                    "in": "path",
+                    "name": "meetingsId",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Id da reunião"
+                }],
+                "tags": ["Meetings"],
+                "summary": "Deleta uma reunião",
+                "description": "Deleta uma reunião no sistema e atualiza o status dos envolvidos",
+                "responses":{
+                    "200": {
+                        "description": "Reunião deletada com sucesso"
+                    }
+                }
+            }
+        }
+    }
+}
