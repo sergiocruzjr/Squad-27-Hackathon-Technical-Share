@@ -14,7 +14,7 @@ const usersRouter = express.Router();
 //? Método PUT
     usersRouter.put('/', httpUpdateUser);
 //? Método DELETE
-    usersRouter.delete('/:username', httpDeleteUser);
+    usersRouter.delete('/:id', httpDeleteUser);
 
 //! Exportando o router dos usuários
 export = usersRouter;
