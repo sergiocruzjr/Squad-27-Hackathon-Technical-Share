@@ -356,6 +356,69 @@
                     }
                 }
             }
+        },
+        "/meetings/{userId}":{
+            "post":{
+                "parameters":[{
+                    "in": "path",
+                    "name": "userId",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Id anfitrião da reunião"
+                }],
+                "tags": ["Meetings"],
+                "summary": "Cadastra uma reunião",
+                "description": "Cadastra uma reunião no sistema marcando o usuário convidado e anfitrião",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties":{
+                                    "date":{
+                                        "type": "date"
+                                    },
+                                    "guestName": {
+                                        "type": "string"
+                                    },
+                                    "subject": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "date": "dd-mm-yyyy",
+                                    "guestName": "Nome do convidado",
+                                    "subject": "Assunto da reunião"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "201": {
+                        "description": "Criado"
+                    }
+                }
+            }
+        },
+        "/meetings/{meetingsId}":{
+            "delete":{
+                "parameters":[{
+                    "in": "path",
+                    "name": "meetingsId",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Id da reunião"
+                }],
+                "tags": ["Meetings"],
+                "summary": "Deleta uma reunião",
+                "description": "Deleta uma reunião no sistema e atualiza o status dos envolvidos",
+                "responses":{
+                    "200": {
+                        "description": "Reunião deletada com sucesso"
+                    }
+                }
+            }
         }
     }
 }
