@@ -1,6 +1,4 @@
-var botaoCadastrar = document.querySelector("#finalizar-cadastro");
-
-var buscarUsuarios = document.querySelector("#button-addon2")
+var botaoCadastrar = document.querySelector(".btn-proximo");
 
 buscarUsuarios.addEventListener("click", function(){
     const urlUsuarios = "";
@@ -28,7 +26,11 @@ function obtemUsuarioCadastrado(form){
     var usuario = {
         nome: form.nome.value,
         email: form.email.value,
-        senha: form.senha.value
+        senha: form.senha.value,
+        idade: form.idade.value,
+        cidade: form.cidade.value,
+        estado: form.estado.value,
+        cargo: form.cargo.value
     }
     return usuario;
 }
