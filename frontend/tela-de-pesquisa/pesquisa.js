@@ -7,21 +7,59 @@ const buscarScrum = document.querySelector("#btncheck4")
 
 const url=""
 
-
-
 buscarUsuarios.addEventListener("click", function(){
     const urlUsuarios = "http://localhost:3333/users";
-    fetch(urlUsuarios, {method:"GET", mode:"no-cors"}) //usar o "params" para trazer as informações do back
+    fetch(urlUsuarios, { 
+        method:"GET", 
+        mode:"no-cors"
+    }) //usar o "params" para trazer as informações do back
     .then(function(resposta){
         resposta.text().then(function(resposta){
-            console.log(resposta);
+
+            /* 
+                userList = [
+                    {
+                        name: 'foo',
+                        profileImage: 'http://imageplaceholder.com',
+                        job: 'dev',
+                    },
+                    {
+                        name: 'bar',
+                        profileImage: 'http://imageplaceholder.com',
+                        job: 'ux designer',
+                    }
+                ]
+            */
+
+            const userList = resposta.users; 
+            const userListEl = document.querySelector("#user-list"); 
+
+            userList.forEach((user) => {
+                const userCardTemplate = mountCard(user);
+
+                /* userCardTemplate
+                    <article class="col-sm-6 col-md-4 col-lg-3" >
+                        <div class="p-4">
+                        <div class="card borda-cor-especial">
+                            <img src="${user.profileImage}" class="card-img-top card-posicao-imagem" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${user.name}</h5>
+                            <p class="card-text fs-6">${user.job}</p>
+                            <a href="#" class="btn botao-cor-especial w-100">Ver perfil</a>
+                            </div>
+                        </div>
+                        </div>
+                    </article>
+                */
+                userListEl.append(userCardTemplate);
+            });
         })
     })
     //ERRO DE CORS
 })
 
 
-buscarTodos.addEventListener("click", function getUsers() {
+/*buscarTodos.addEventListener("click", function getUsers() {
     fetch(url)
     .then(response => response.json())
     .then(data => renderApiResult.textContent = JSON.stringify(data))
@@ -39,7 +77,7 @@ buscarDevs.addEventListener("click", function getUser(id) {
     .catch(error => console.error(error))
 })
 
-/*buscarUx.addEventListener("click", Cargo getUser() {
+buscarUx.addEventListener("click", Cargo getUser() {
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -64,35 +102,29 @@ buscarScrum.addEventListener("click", Cargo getUser() {
 
 
 getUsers()
-getUser()
+getUser()*/
 
+const mountCard = function(user) {
+    /* 
+        user = {
+            name: 'foo',
+            profileImage: 'http://imageplaceholder.com',
+            job: 'dev',
+        }
+    */
+    const cardTemplate = `
+        <article class="col-sm-6 col-md-4 col-lg-3" >
+            <div class="p-4">
+            <div class="card borda-cor-especial">
+                <img src="${user.profileImage}" class="card-img-top card-posicao-imagem" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">${user.name}</h5>
+                <p class="card-text fs-6">${user.job}</p>
+                <a href="#" class="btn botao-cor-especial w-100">Ver perfil</a>
+                </div>
+            </div>
+            </div>
+        </article>`;
 
-function montaArticle(usuario) {
-    var usuarioArticle = document.createElement("article");
-    usuarioArticle.classList.add("usuario");
-
-    var div = document.createElement("div");
-    div.classList.add("card-body");
-
-        var div2 = document.createElement("div");
-        div2.classList.add("card-body");
-
-            var img = document.createElement("img");
-            img.textContent = usuario.img;
-            img.classList.add("imagem");
-
-            var div3 = document.createElement("div");
-            div3.classList.add("card-body");
-
-                var nomeH5 = document.createElement("h5");
-                nomeH5.textContent = usuario.name;
-                nomeH5.classList.add("card-title");
-
-                var cargoP = document.createElement("p");
-                cargoP.textContent = usuario.cargo;
-                cargoP.classList.add("card-text");
-
-   
-    var tabela = document.querySelector("#tabela-usuarios")
-    tabela.appendChild(usuarioTr);
-}*/
+    return cardTemplate;
+}
