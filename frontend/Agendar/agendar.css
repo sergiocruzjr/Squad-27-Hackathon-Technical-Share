@@ -1,4 +1,4 @@
-.nav{
+nav{
     background-color: #ffffff;
     border-bottom: 1px solid #E3E3E3;
 }
@@ -13,6 +13,13 @@
 li:hover {
     color: #FF4500;
     text-decoration: underline;
+}
+
+.pesquisa{
+    display: inline-block;
+    background: #FFF6F3 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    width: 1232px;
 }
 
 .perfil {
@@ -61,7 +68,7 @@ body {
 .botao:hover{
     background-color: #FF4500;
     text-align: center;
-    color: #FFF6F3;
+    color: #ffffff;
     border-radius: 10px;
     width: 194px;
     border: 1px solid #FF4500;
@@ -89,5 +96,8 @@ body {
 }
 
 .ultima-secao {
-    background-color: #FFF6F3;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    width: 900px;
 }

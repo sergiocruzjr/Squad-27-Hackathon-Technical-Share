@@ -4,7 +4,15 @@ body{
 }
 
 nav{
-    background-color: #FFF6F3;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E3E3E3;
+}
+
+.pesquisa{
+    display: inline-block;
+    background: #FFF6F3 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    width: 1232px;
 }
 
 #pesquisa-filtro {
@@ -13,6 +21,7 @@ nav{
 }
 
 .botao-label{
+    background-color: #FFFFFF;
     font-size: 18px;
     border: 1px solid #CECFD0;
     color: #CECFD0;
@@ -21,9 +30,17 @@ nav{
 
 .botao-label:hover{
     background-color: #FF4500;
+    color: #FFFFFF;
     font-size: 18px;
     border: 1px solid #FF4500;
+    opacity: 1;
+}
+
+.botao-label:active{
+    background-color: #FF4500;
     color: #FFFFFF;
+    font-size: 18px;
+    border: 1px solid #FF4500;
     opacity: 1;
 }
 
@@ -48,6 +65,15 @@ nav{
     height: 200px;
 }
 
+h5{
+    color: #FF4500;
+    font-size: 26px;
+}
+
+p{
+    font-size: 16px;
+}
+
 #pesquisa-perfis {
     display: inline-block;
     vertical-align: top;
@@ -55,11 +81,6 @@ nav{
     padding: 0 10px;
 }
 
-.barra-pesquisa{
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border-radius: 10px;
-    opacity: 1;
-}
 .texto-pesquisa{
     letter-spacing: 0px;
     color: #000000;
