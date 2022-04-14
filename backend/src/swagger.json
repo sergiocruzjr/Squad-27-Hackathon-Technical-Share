@@ -43,10 +43,10 @@
                 },
                 "responses":{
                     "201": {
-                        "description": "Created"
+                        "description": "Criado"
                     },
                     "500": {
-                        "description": "User already exists"
+                        "description": "Usuário já existe"
                     }
                 }
             },
@@ -118,11 +118,8 @@
                     }
                 },
                 "responses":{
-                    "201": {
-                        "description": "Created"
-                    },
-                    "500": {
-                        "description": "User already exists"
+                    "200": {
+                        "description": "Usuário atualizado"
                     }
                 }
             }
@@ -142,6 +139,220 @@
                 "responses":{
                     "200": {
                         "description": "Success"
+                    }
+                }
+            }
+        },
+        "/auth/login":{
+            "put":{
+                "tags": ["Auth"],
+                "summary": "Login de usuário",
+                "description": "Verifica se o usuário está no banco e credencia ele à acessar o sistema",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties":{
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "email": "fulanodasilva@email.com",
+                                    "password": "senha123"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200": {
+                        "description": "Usuário logado"
+                    },
+                    "400": {
+                        "description": "Email inválido"
+                    },
+                    "401": {
+                        "description": "Senha errada"
+                    },
+                    "404": {
+                        "description": "Usuário não encontrado"
+                    }
+                }
+            }
+        },
+        "/auth/logout":{
+            "get":{
+                "tags": ["Auth"],
+                "summary": "Desloga usuário",
+                "description": "Descredencia o usuário previamente logado",
+                "responses":{
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/auth/verify":{
+            "get":{
+                "tags": ["Auth"],
+                "summary": "Verifica login do usuário",
+                "description": "Verifica a validez do login do usuário",
+                "responses":{
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/search/name":{
+            "get": {
+                "parameters":[{
+                    "in": "query",
+                    "name": "name",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Nome do usuário no banco"
+                }],
+                "tags": ["Users"],
+                "summary": "Procura usuário",
+                "description": "Procurar usuário pelo nome no banco e retorna lista que contenha esse nome",
+                "responses":{
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json":{
+                                "type": "array",
+                                "items":{
+                                    "type": "object",
+                                    "properties":{
+                                        "name":{
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "password": {
+                                            "type": "string"
+                                        },
+                                        "knowledges": {
+                                            "type": "array"
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Nenhum usuário com esse nome"
+                    }
+                }
+            }
+        },
+        "/search/knowledges":{
+            "get": {
+                "parameters":[{
+                    "in": "query",
+                    "name": "knowledges[]",
+                    "required": "true",
+                    "type": "array",
+                    "description": "Conhecimentos do usuário",
+                    "collectionFormat": "multi"
+                }],
+                "tags": ["Users"],
+                "summary": "Procura usuário por conhecimento",
+                "description": "Procurar usuário pelos conhecimentos listados",
+                "responses":{
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json":{
+                                "type": "array",
+                                "items":{
+                                    "type": "object",
+                                    "properties":{
+                                        "name":{
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "password": {
+                                            "type": "string"
+                                        },
+                                        "knowledges": {
+                                            "type": "array"
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Nenhum usuário com esse(s) conhecimento(s)"
+                    }
+                }
+            }
+        },
+        "/search/meetings":{
+            "get": {
+                "tags": ["Meetings"],
+                "summary": "Lista todas as reuniões",
+                "description": "Lista todas as reuniões cadastradas no sistema",
+                "responses":{
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json":{
+                                "type": "array",
+                                "items":{
+                                    "type": "object",
+                                    "properties":{
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Nenhuma reunião no sistema"
+                    }
+                }
+            }
+        },
+        "/search/meetings/{meetingsId}":{
+            "get": {
+                "parameters":[{
+                    "in": "path",
+                    "name": "meetingsId",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Id da reunião"
+                }],
+                "tags": ["Meetings"],
+                "summary": "Procura uma reunião",
+                "description": "Procura uma reunião pelo id passado",
+                "responses":{
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json":{
+                                "type": "array",
+                                "items":{
+                                    "type": "object",
+                                    "properties":{
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Nenhuma reunião no sistema com esse id"
                     }
                 }
             }
