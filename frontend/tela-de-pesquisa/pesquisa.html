@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="pesquisa.css">
 </head>
-<body>
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -19,13 +19,13 @@
               <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Início</a>
+                    <a class="nav-link fs-5" aria-current="page" href="#">Início</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Meu perfil</a>
+                    <a class="nav-link fs-5" href="#">Meu perfil</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Procurar Profissionais</a>
+                    <a class="nav-link fs-5" href="#">Procurar Profissionais</a>
                   </li>
                 </ul>
               </div>
@@ -33,58 +33,122 @@
         </nav>        
     </header>
     <main>
-        <div class="">
-            <p class="text-center texto-pesquisa">Aqui você pode encontrar profissionais #SangueLaranja para te ajudar</p>
+<body>
+        <div class="mt-5">
+            <p class="text-center texto-pesquisa">Aqui você pode encontrar profissionais <strong>#SangueLaranja</strong> para te ajudar</p>
         </div>
-        <div class="input-group barra-pesquisa">
-            <input type="text" class="form-control" placeholder="Encontre um sangue laranja" aria-label="Encontre um sangue laranja" aria-describedby="button-addon2">
+        <div class="input-group justify-content-center barra-pesquisa">
+            <input type="text" class="form-control" aria-label="Encontre um sangue laranja" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" type="button" id="button-addon2">🔍</button>
         </div>
 
-        <div class="btn-group d-flex justify-content-center m-4 px-5" role="group" aria-label="Basic checkbox toggle button group">
-            <input type="checkbox" class="btn-check botao-label" id="btncheck1" autocomplete="off">
-            <label class="btn m-2 botao-label" for="btncheck1">Todos</label>
-
-            <input type="checkbox" class="btn-check " id="btncheck1" autocomplete="off">
-            <label class="btn m-2 botao-label" for="btncheck1">Devs</label>
-          
-            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-            <label class="btn m-2 botao-label" for="btncheck2">UX Design</label>
-          
-            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-            <label class="btn m-2 botao-label" for="btncheck3">Scrum Master</label>
+        <div class="p-5">
+          <div class="container-fluid d-flex btn-group d-flex" role="group" aria-label="Basic checkbox toggle button group">
+              <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+              <label class="btn rounded-pill botao-label w-25" for="btncheck1">Todos</label>
+              <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+              <label class="btn rounded-pill botao-label w-25" for="btncheck2">Devs</label>
+              <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+              <label class="btn rounded-pill  botao-label w-25" for="btncheck3">UX Design</label>
+              <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+              <label class="btn rounded-pill botao-label w-25" for="btncheck4">Scrum Master</label>
           </div>
+        </div>
 
-            <section class="container-fluid bg-light">
-                <div class="row justify-content-start">
-                  <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-                    <img src="./img/perfil-ex1.jpg" class="card-img-top card-posicao-imagem1" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Juliana Almeira</h5>
-                      <p class="card-text">Desenvolvedora</p>
-                      <a href="#" class="btn botao-cor-especial">Ver perfil</a>
-                    </div>
-                  </article>
-
-                  <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4" >
-                    <img src="./img/perfil-ex2.jpg" class="card-img-top card-posicao-imagem" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Pedro Henquique</h5>
-                      <p class="card-text">UX Design</p>
-                      <a href="#" class="btn botao-cor-especial">Ver perfil</a>
-                    </div>
-                  </article>
+            <section class="container-fluid d-flex justify-content-center">
+                <div class="primeira-section">
+                  <div class="row justify-content-start">
+                    <article class="col-sm-6 col-md-4 col-lg-3 usuario">
+                      <div class="p-4">
+                        <div class="card borda-cor-especial">
+                          <img src="../img/perfil-ex1.jpg" class="imagem card-img-top card-posicao-imagem1" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Juliana Almeira</h5>
+                            <p class="card-text fs-6">Desenvolvedora</p>
+                            <a href="#" class="btn botao-cor-especial w-100">Ver perfil</a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="col-sm-6 col-md-4 col-lg-3" >
+                      <div class="p-4">
+                        <div class="card borda-cor-especial">
+                          <img src="../img/perfil-ex2.jpg" class="card-img-top card-posicao-imagem" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Pedro Henquique</h5>
+                            <p class="card-text fs-6">UX Design</p>
+                            <a href="#" class="btn botao-cor-especial w-100">Ver perfil</a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
                   
-                  <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4" >
-                    <img src="./img/perfil-ex3.jpg" class="card-img-top card-posicao-imagem" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Mariana Silva</h5>
-                      <p class="card-text">Scrum Master</p>
-                      <a href="#" class="btn botao-cor-especial">Ver perfil</a>
-                    </div>
-                  </article>
+                    <article class="col-sm-6 col-md-4 col-lg-3" >
+                      <div class="p-4">
+                        <div class="card borda-cor-especial">
+                          <img src="../img/perfil-ex3.jpg" class="card-img-top card-posicao-imagem" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Mariana Silva</h5>
+                            <p class="card-text fs-6">Scrum Master</p>
+                            <a href="#" class="btn botao-cor-especial w-100">Ver perfil</a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  
+                    <article class="col-sm-6 col-md-4 col-lg-3" >
+                      <div class="p-4">
+                        <div class="card borda-cor-especial">
+                          <img src="../img/perfil-ex3.jpg" class="card-img-top card-posicao-imagem" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Mariana Silva</h5>
+                            <p class="card-text fs-6">Scrum Master</p>
+                            <a href="#" class="btn botao-cor-especial w-100">Ver perfil</a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="col-sm-6 col-md-4 col-lg-3" >
+                      <div class="p-4">
+                        <div class="card borda-cor-especial">
+                          <img src="../img/perfil-ex3.jpg" class="card-img-top card-posicao-imagem" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Mariana Silva</h5>
+                            <p class="card-text fs-6">Scrum Master</p>
+                            <a href="#" class="btn botao-cor-especial w-100">Ver perfil</a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="col-sm-6 col-md-4 col-lg-3" >
+                      <div class="p-4">
+                        <div class="card borda-cor-especial">
+                          <img src="../img/perfil-ex3.jpg" class="card-img-top card-posicao-imagem" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Mariana Silva</h5>
+                            <p class="card-text fs-6">Scrum Master</p>
+                            <a href="#" class="btn botao-cor-especial w-100">Ver perfil</a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="col-sm-6 col-md-4 col-lg-3" >
+                      <div class="p-4">
+                        <div class="card borda-cor-especial">
+                          <img src="" id="userAvatar" class="card-img-top card-posicao-imagem" alt="...">
+                          <div class="card-body">
+                            <h5 id="userName" class="card-title"></h5>
+                            <p id="userFunction" class="card-text"></p>
+                            <a href="#" class="btn botao-cor-especial w-100">Ver perfil</a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                </div>
             </section>
     </main>
+
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="./pesquisa.js"></script>
 </body>

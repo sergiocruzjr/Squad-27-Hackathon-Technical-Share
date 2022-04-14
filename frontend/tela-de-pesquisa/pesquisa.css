@@ -13,26 +13,23 @@ nav{
 }
 
 .botao-label{
-    font-size: 28px;
-    border: 1px solid #FF4500;
-    color: #000000;
+    font-size: 18px;
+    border: 1px solid #CECFD0;
+    color: #CECFD0;
     opacity: 1;
 }
 
 .botao-label:hover{
     background-color: #FF4500;
-    font-size: 28px;
+    font-size: 18px;
     border: 1px solid #FF4500;
     color: #FFFFFF;
     opacity: 1;
 }
 
-.card-largura{
-    max-width: 18rem;
-}
-
 .borda-cor-especial{
-    border-color: #FF4500;
+    box-shadow: 0px 3px 6px #00000029
+    ;
 }
 
 .botao-cor-especial{
@@ -68,3 +65,18 @@ nav{
     color: #000000;
     opacity: 1;
 }
+
+p{
+    font-size: 22px;
+}
+
+.primeira-section{
+    background-color: #FFF6F3;
+    width: 1544px;
+}
+
+.primeira-section div{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
