@@ -121,12 +121,91 @@ a.btn-signup:hover {
     justify-content:center; 
 }
 
-.right .images-wrapper {
-    width: 815px;
-    height: 842px;
-    margin-top: 135px;
-    margin-left: 160px;
-    margin-right: 130px;
-    margin-bottom: 102px;
-    background-color: #FFF6F3;
+/************************
+ ******** home ********* 
+ ************************/
+
+header {
+    background-color: var(--fc-white);
+    height:70px;
+}
+
+header mav .nav-brand img {
+    max-width: 180px;
+}
+
+header nav .menu-nav li.nav-item + li.nav-item {
+    margin-left: 50px;
+}
+
+header nav .menu-nav .nav-item nav-link {
+    color: var(--fc-gray-02);
+}
+
+header nav .menu-nav .nav-item .nav-link.active {
+    color: var(--fc-orange-03);
+    border-bottom: 3px solid var(--fc-orange-03);
+}
+
+main {
+    background-color: var(--fc-light-orange-01);
+    height: 100vh;
+    padding-top: 100px;
+}
+
+main .title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 65px;
+}
+
+main .title-wrapper .welcome-title {
+    color: var(--fc-orange-01);
+}
+
+main .title-wrapper .welcome-subtitle {
+    color: var(--fc-dark-black-02);
+}
+
+main .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+main .content-wrapper .content {
+    background-color: var(--fc-white);
+    border-radius: 10px;
+    max-width: 328px;
+    max-height: 402px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 65px 23px 23px 23px;
+    margin-right: 16px;
+}
+
+main .content-wrapper .content:last-child {
+    margin-right: 0;
+}
+
+main .content-wrapper .content img{
+    background-color: var(--fc-white);
+    border-radius: 10px;
+    max-width: 210px;
+    max-height: 183px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 45px;
+}
+
+main .content-wrapper .content button {
+    background-color: var(--fc-orange-03);
+    color: var(--fc-white);
+    border-radius: 10px;
+    width: 100%;
 }

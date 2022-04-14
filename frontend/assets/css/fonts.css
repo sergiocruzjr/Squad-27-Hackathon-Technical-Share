@@ -12,6 +12,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Metropolis';
+  src: url(../fonts/metropolis/Metropolis-ExtraLight.otf);
+  font-weight: 100;
+  font-style: normal;
+}
+
 body {
   font-family: 'Metropolis';
   font-size: 1.375rem;
@@ -20,44 +27,44 @@ body {
 
 .ft-title {
   font-family: 'Metropolis';
-  font-size: 2.125rem;
+  font-size: 1.75rem;
   font-weight: 700;
 }
 
 .ft-subtitle-1 {
   font-family: 'Metropolis';
-  font-size: 1.625rem;
+  font-size: 1.4rem;
   font-weight: normal;
 }
 
 .ft-subtitle-2 {
   font-family: 'Metropolis';
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: normal;
 }
 
 .ft-placeholder {
   font-family: 'Metropolis';
-  font-size: 1.125rem;
+  font-size: 0.75rem;
   font-weight: normal;
 }
 
 .ft-table-header {
   font-family: 'Metropolis';
-  font-size: 1.125rem;
+  font-size: 0.75rem;
   font-weight: normal;
 }
 
 .ft-default {
   font-family: 'Metropolis';
-  font-size: 1.375rem;
+  font-size: 1rem;
   font-weight: normal;
 }
 
 .ft-nav-item {
   font-family: 'Metropolis';
-  font-size: 1.375rem;
-  font-weight: normal;
+  font-size: 1rem;
+  font-weight: 100;
 }
 
 .ft-link {
@@ -68,24 +75,24 @@ body {
 
 .ft-btn {
   font-family: 'Metropolis';
-  font-size: 1.75rem;
+  font-size: 1.15rem;
   font-weight: normal;
 }
 
 .ft-label {
   font-family: 'Metropolis';
-  font-size: 1.375rem;
+  font-size: 1rem;
   font-weight: normal;
 }
 
 .ft-btn-filter {
   font-family: 'Metropolis';
-  font-size: 1.125rem;
+  font-size: 0.75rem;
   font-weight: normal;
 }
 
 .ft-dropdown {
   font-family: 'Metropolis';
-  font-size: 1.375rem;
+  font-size: 1rem;
   font-weight: normal;
 }
