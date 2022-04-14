@@ -4,5 +4,147 @@
         "title": "Technical Share Documentation",
         "description": "Documentação da plataforma Technical Share",
         "version": "1.0.0"
+    },
+    "paths": {
+        "/users":{
+            "post":{
+                "tags": ["Users"],
+                "summary": "Cadastra usuário no banco",
+                "description": "Cadstra um usuário no sistema e suas informações",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties":{
+                                    "name":{
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "knowledges": {
+                                        "type": "array"
+                                    }
+                                    
+                                },
+                                "example": {
+                                    "name": "Fulano da Silva",
+                                    "email": "fulanodasilva@email.com",
+                                    "password": "senha123",
+                                    "knowledges": ["UI", "UX", "Dev", "Backend"]
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "User already exists"
+                    }
+                }
+            },
+            "get":{
+                "tags": ["Users"],
+                "summary": "Lista de todos os usuários",
+                "description": "Retorna a lista de todos os usuários cadastrados no sistema",
+                "responses":{
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json":{
+                                "type": "array",
+                                "items":{
+                                    "type": "object",
+                                    "properties":{
+                                        "name":{
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "password": {
+                                            "type": "string"
+                                        },
+                                        "knowledges": {
+                                            "type": "array"
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put":{
+                "tags": ["Users"],
+                "summary": "Atualiza usuário no banco",
+                "description": "Atualiza o usuário substituindo as informações com as passadas no body",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties":{
+                                    "name":{
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "knowledges": {
+                                        "type": "array"
+                                    }
+                                    
+                                },
+                                "example": {
+                                    "name": "Fulano da Silva",
+                                    "email": "fulanodasilva@email.com",
+                                    "password": "senha123",
+                                    "knowledges": ["UI", "UX", "Dev", "Backend"]
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "User already exists"
+                    }
+                }
+            }
+        },
+        "/users/{id}":{
+            "delete": {
+                "parameters":[{
+                    "in": "path",
+                    "name": "id",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Id do usuário no banco"
+                }],
+                "tags": ["Users"],
+                "summary": "Deletar usuário",
+                "description": "Deletar um usuário pelo seu username",
+                "responses":{
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }
     }
 }

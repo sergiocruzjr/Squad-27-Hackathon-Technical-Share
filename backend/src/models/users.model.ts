@@ -5,10 +5,6 @@ async function createUser(name: string, userID: string, email: string, knowledge
     const referencePath = `/users/${userID}/`;
 	const userReference = ref(database, referencePath);
 
-    // const meetings = {
-    //     0: '',
-    // };
-
     await set(userReference, {
         name,
         email,
@@ -35,19 +31,20 @@ async function getAllUsers(){
     return users;
 }
 
-async function updateUser(name: string, username: string){
-    const referencePath = '/users/'+username+'/';
+async function updateUser(name: string, userID: string, email: string, knowledges: Array<string>){
+    const referencePath = `/users/${userID}/`;
     const userReference = ref(database, referencePath);
 
     //TODO: como será tratado os dados que não serão alterados
     await update(userReference, {
         name,
-        created_at: new Date(),
+        email,
+        knowledges,
     });
 }
 
-async function deleteUser(username: string){
-    const referencePath = '/users/'+username+'/';
+async function deleteUser(id: string){
+    const referencePath = '/users/'+id+'/';
     const userReference = ref(database, referencePath);
 
     await remove(userReference);
