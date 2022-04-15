@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
     dotenv.config();
 import app from './app'
 
+//! Definindo a porta
 const PORT = process.env.PORT || 3000;
 
 //! Definindo o servidor
