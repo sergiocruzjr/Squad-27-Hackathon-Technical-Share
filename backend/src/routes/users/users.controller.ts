@@ -17,7 +17,7 @@ async function httpCreateUser(request: Request, response: Response){
 async function httpGetAllUsers(request: Request, response: Response){
     const users = await getAllUsers();
     
-    return response.status(200).json(users);
+    return response.status(200).json({data:[users]});
 }
 
 //! Método PUT - Update dos dados do usuário

@@ -5,9 +5,29 @@ const buscarDevs = document.querySelector("#btncheck2")
 const buscarUx = document.querySelector("#btncheck3")
 const buscarScrum = document.querySelector("#btncheck4")
 
-const url=""
+const url="http://localhost:3333/users"
 
-buscarUsuarios.addEventListener("click", function(){
+
+function getUsers() {
+    fetch(url)
+    .then(response => response.json())
+    .then(data => 
+    console.log(JSON.stringify(data)))
+    .catch(error => console.error(error))
+}
+
+getUsers()
+
+/*fetch(url, { 
+    method:"GET", 
+    mode:"cors"
+})
+    .then((response)=> {
+        console.log(response.json());
+        JSON.stringify(data)
+    })*/
+
+/*buscarUsuarios.addEventListener("click", function(){
     const urlUsuarios = "http://localhost:3333/users";
     fetch(urlUsuarios, { 
         method:"GET", 
@@ -31,9 +51,9 @@ buscarUsuarios.addEventListener("click", function(){
                 ]
             */
 
-            const userList = resposta.users; 
+            /*const userList = resposta; 
             const userListEl = document.querySelector("#user-list"); 
-
+                console.log(userList)
             userList.forEach((user) => {
                 const userCardTemplate = mountCard(user);
 
@@ -51,12 +71,12 @@ buscarUsuarios.addEventListener("click", function(){
                         </div>
                     </article>
                 */
-                userListEl.append(userCardTemplate);
+                /*userListEl.append(userCardTemplate);
             });
         })
     })
     //ERRO DE CORS
-})
+})*/
 
 
 /*buscarTodos.addEventListener("click", function getUsers() {
