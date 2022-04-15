@@ -272,7 +272,7 @@ main {
 }
 
 .profile-professional .main .container {
-    max-width: 768px
+    max-width: 1024px
 }
 
 .profile-professional main .profile-professional-top {
@@ -362,58 +362,61 @@ main {
  ******** tela de confirmacao ********* 
  ************************/
 
-.tela-de-confirmacao
+.tela-de-confirmacao {}
 
 .tela-de-confirmacao main .container {
-    background-color: var(--fc-white);
-    width: 800px;
-    height: 425px;
+    max-width: 1024px;
 }
 
-.tela-de-confirmacao main .container .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.tela-de-confirmacao main .container .content img {
-    background-color: var(--fc-white);
-    max-width: 122px;
-    max-height: 110px;
-    width: 100%;
-    height: 100%;
-    margin-top: 40px;
-    margin-bottom: 35px;
-}
-
-.tela-de-confirmacao main .container .content h1 {
-    font-weight: 500;
-    line-height: 1.2;
-    width: 100%;
-    height: 100%;
-}
-
-.tela-de-confirmacao main .container .content .schedule-wrapper {
+.tela-de-confirmacao main .tela-de-confirmacao-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-width: 400px;
+
+    margin-bottom: 40px;
 }
 
-.tela-de-confirmacao main .container .content .schedule-date {
+.tela-de-confirmacao main .tela-de-confirmacao-top .tela-de-confirmacao-message {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    margin: 25px 128px 0 0;
+    align-items: center;
 }
 
-.tela-de-confirmacao main .container .content .schedule-hour {
+.tela-de-confirmacao main .tela-de-confirmacao-top .tela-de-confirmacao-message strong {
+    color: var(--fc-orange-03);
+}
+
+.tela-de-confirmacao main .tela-de-confirmacao-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 150px 100px;
+}
+
+.tela-de-confirmacao main .tela-de-confirmacao-content .tela-de-confirmacao-picture {
+    max-width: 350px;
+    width: 100%;
+}
+
+.tela-de-confirmacao main .tela-de-confirmacao-content .tela-de-confirmacao-date {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
-    margin: 25px 0 0 0;
+    justify-content: center;
+
+    max-width: 300px;
+    width: 100%;
+}
+
+.tela-de-confirmacao main .tela-de-confirmacao-content .tela-de-confirmacao-hour {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    max-width: 300px;
+    width: 100%;
 }
