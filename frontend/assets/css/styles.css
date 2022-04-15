@@ -262,7 +262,7 @@ main {
     margin-bottom: 45px;
 }
 
-.home main .content-wrapper .content button {
+.home main .content-wrapper .content a {
     background-color: var(--fc-orange-03);
     color: var(--fc-white);
     border-radius: 10px;
