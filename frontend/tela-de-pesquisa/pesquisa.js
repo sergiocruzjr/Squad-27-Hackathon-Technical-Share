@@ -152,3 +152,8 @@ const mountCard = function(user) {
 
     return cardTemplate;
 }
+
+
+buscarTodos.addEventListener("click", function(){
+    var todos = document.querySelectorAll("article")
+});
