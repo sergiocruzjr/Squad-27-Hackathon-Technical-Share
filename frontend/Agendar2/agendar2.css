@@ -53,37 +53,35 @@ body {
     font-size: 28px;
     font-family: "Metropolis, Regular";
     color: #FF4500;
-    margin: 70px 10px 0 0;
     border-radius: 10px;
     width: 194px;
     border: 1px solid #FF4500;
     opacity: 1;
+    cursor: pointer;
+}
+
+.botao a{
+    color: #FF4500;
+    text-decoration: none;
+    font-family: "Metropolis, Regular";
+    font-size: 28px;
 }
 
 .botao:hover{
     background-color: #FF4500;
     text-align: center;
-    color: #FFF6F3;
+    color: #ffffff;
     border-radius: 10px;
     width: 194px;
     border: 1px solid #FF4500;
     opacity: 1;
 }
 
-.container a{
+.botao:hover a{
+    color: #ffffff;
     text-decoration: none;
     font-family: "Metropolis, Regular";
     font-size: 28px;
-    color: #FF4500;
-    
-}
-
-.conteiner a:hover{
-    text-decoration: none;
-    font-family: "Metropolis, Regular";
-    font-size: 28px;
-    color: #FFF6F3;
-    text-decoration: none;
 }
 
 .descricao-etapas{
