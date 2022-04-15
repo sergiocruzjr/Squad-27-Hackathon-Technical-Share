@@ -5,7 +5,31 @@ const buscarDevs = document.querySelector("#btncheck2")
 const buscarUx = document.querySelector("#btncheck3")
 const buscarSm = document.querySelector("#btncheck4")
 
-const url=""
+const url="http://localhost:3333/users"
+
+
+/*function getUsers() {
+    fetch(url, { 
+        method:"GET", 
+        mode:"no-cors"
+    })
+    .then(response => response.json())
+    .then(data => 
+    console.log(JSON.stringify(data)))
+    .catch(error => console.error(error))
+}
+
+getUsers()*/
+
+/*fetch(url, { 
+    method:"GET", 
+    mode:"cors"
+})
+    .then((response)=> {
+        console.log(response.json());
+        JSON.stringify(data)
+    })*/
+
 
 /*buscarUsuarios.addEventListener("click", function(){
     const urlUsuarios = "http://localhost:3333/users";
@@ -13,8 +37,10 @@ const url=""
         method:"GET", 
         mode:"no-cors"
     }) //usar o "params" para trazer as informações do back
-    .then(function(resposta){
-        resposta.text().then(function(resposta){
+    .then(response => response.json())
+    .then(data => 
+    console.log(JSON.stringify(data)))
+    .catch(error => console.error(error))
 
             /* 
                 userList = [
@@ -32,8 +58,9 @@ const url=""
             */
 
             /*const userList = resposta.users; 
-            const userListEl = document.querySelector("#user-list"); 
 
+            const userListEl = document.querySelector("#user-list"); 
+                console.log(userList)
             userList.forEach((user) => {
                 const userCardTemplate = mountCard(user);
 
@@ -57,7 +84,6 @@ const url=""
     })
     //ERRO DE CORS
 })*/
-
 
 /*buscarTodos.addEventListener("click", function getUsers() {
     fetch(url)
