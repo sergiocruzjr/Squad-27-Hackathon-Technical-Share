@@ -46,4 +46,6 @@ Nosso projeto trata-se de um sistema capaz de registrar usuários e seus interes
  OBS: Se essa porta estiver ocupada, pode-se mudar no arquivo `src/server.js`
  Devemos também rodar as nossas migrations para a construção da tabela de usuários no nosso banco de dados. fazemos isso através do comando
 
-Depois de executados esses comandos podemos utilizar nossa aplicação normalmente e ver as suas funcionalidades no link https://localhost:3333
+Depois de executados esses comandos podemos utilizar nossa aplicação normalmente e ver as suas funcionalidades no link <https://localhost:3333>
+
+A aplicação também está hospedada na plataforma heroku no seguinte link: <https://teste-deploy-technicalshare.herokuapp.com/api-docs/#/>
