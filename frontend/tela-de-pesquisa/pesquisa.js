@@ -8,15 +8,18 @@ const buscarScrum = document.querySelector("#btncheck4")
 const url="http://localhost:3333/users"
 
 
-function getUsers() {
-    fetch(url)
+/*function getUsers() {
+    fetch(url, { 
+        method:"GET", 
+        mode:"no-cors"
+    })
     .then(response => response.json())
     .then(data => 
     console.log(JSON.stringify(data)))
     .catch(error => console.error(error))
 }
 
-getUsers()
+getUsers()*/
 
 /*fetch(url, { 
     method:"GET", 
@@ -27,14 +30,16 @@ getUsers()
         JSON.stringify(data)
     })*/
 
-/*buscarUsuarios.addEventListener("click", function(){
-    const urlUsuarios = "http://localhost:3333/users";
-    fetch(urlUsuarios, { 
+buscarUsuarios.addEventListener("click", function(){
+    //const urlUsuarios = "http://localhost:3333/users";
+    fetch(url, { 
         method:"GET", 
         mode:"no-cors"
     }) //usar o "params" para trazer as informações do back
-    .then(function(resposta){
-        resposta.text().then(function(resposta){
+    .then(response => response.json())
+    .then(data => 
+    console.log(JSON.stringify(data)))
+    .catch(error => console.error(error))
 
             /* 
                 userList = [
@@ -70,13 +75,12 @@ getUsers()
                         </div>
                         </div>
                     </article>
-                */
-                /*userListEl.append(userCardTemplate);
-            });
-        })
-    })
+                
+                userListEl.append(userCardTemplate);*/
+});
+    
     //ERRO DE CORS
-})*/
+
 
 
 /*buscarTodos.addEventListener("click", function getUsers() {
