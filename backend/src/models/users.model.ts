@@ -1,18 +1,20 @@
 import { remove, update } from 'firebase/database';
 import { database, set, ref, get, child } from './database/firebase-connection';
 
-async function createUser(name: string, username: string){
-    const referencePath = '/users/'+username+'/';
+async function createUser(name: string, userID: string, email: string, knowledges: Array<string>){
+    const referencePath = `/users/${userID}/`;
 	const userReference = ref(database, referencePath);
 
     await set(userReference, {
         name,
-        created_at: new Date(),
+        email,
+        knowledges,
+        //meetings,
     });
 }
 
 async function getAllUsers(){
-    let users;
+    let users: any;
 
     const referencePath = '/users/';
     const userReference = ref(database, referencePath);
@@ -29,19 +31,20 @@ async function getAllUsers(){
     return users;
 }
 
-async function updateUser(name: string, username: string){
-    const referencePath = '/users/'+username+'/';
+async function updateUser(name: string, userID: string, email: string, knowledges: Array<string>){
+    const referencePath = `/users/${userID}/`;
     const userReference = ref(database, referencePath);
 
     //TODO: como será tratado os dados que não serão alterados
     await update(userReference, {
         name,
-        created_at: new Date(),
+        email,
+        knowledges,
     });
 }
 
-async function deleteUser(username: string){
-    const referencePath = '/users/'+username+'/';
+async function deleteUser(id: string){
+    const referencePath = '/users/'+id+'/';
     const userReference = ref(database, referencePath);
 
     await remove(userReference);

@@ -5,7 +5,6 @@ const buscarDevs = document.querySelector("#btncheck2")
 const buscarUx = document.querySelector("#btncheck3")
 const buscarSm = document.querySelector("#btncheck4")
 
-
 const userList = [
              user = {
                 name: 'Juliana Almeida',

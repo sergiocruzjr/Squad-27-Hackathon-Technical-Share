@@ -9,6 +9,7 @@ main {
     background-color: var(--fc-light-orange-01);
     padding-top: 100px;
 }
+
 .bg-fc-green {
     background: var(--fc-green);
 }
@@ -27,6 +28,13 @@ main {
     border-radius: 10px;
 }
 
+.fc-btn-outline {
+    border: 1px solid var(--fc-orange-03);
+    background-color: transparent;
+    color: var(--fc-orange-03);
+    border-radius: 10px;
+}
+
 /************************
  ******** login ********* 
  ************************/
@@ -36,30 +44,42 @@ main {
     width: 100%
 }
 
-.left {
+.login .left {
     height: 100vh;
     max-width: 817px;
 
     display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.login .left .authentication {
+    max-width: 380px;
+    width: 100%;
+
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.left .logo {
-    max-width: 275px;
+.login .left .authentication .login-wrapper {
+    width:100%;
+}
+
+.login .left .authentication .logo {
+    max-width: 235px;
+    margin-bottom: 50px;
+}
+
+.login .left form {
+}
+
+.login .left form .input-wrapper {
+    max-width: 452px;
+    height: 50px;
     width: 100%;
-
-    margin: 0 0 30px 0;
-}
-
-.left form {
-    /*width: 275px;*/
-}
-
-.left form .input-wrapper {
-    width: 452px;
-    height: 60px;
 
     display: flex;
     align-items: center;
@@ -71,27 +91,27 @@ main {
     padding-right: 3px;
 }
 
-.left form .input-wrapper img {
-    width: 27px;
-    height: 27px;
+.login .left form .input-wrapper img {
+    max-width: 27px;
+    max-height: 27px;
     margin-right: 20px;
 }
 
-.left form .input-wrapper input {
-    width: 452px;
+.login .left form .input-wrapper input {
+    max-width: 380px;
     height: 100%;
     border: none;
     box-shadow: none;
     padding-left: 5px;
 }
 
-input:focus {
+.login input:focus {
     border: none;
     border-color: none;
     box-shadow: none;
 }
 
-.left .login-form .actions {
+.login .left .login-form .actions {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -99,46 +119,67 @@ input:focus {
     margin-top: 41px;
 }
 
-.left .login-form .actions button {
+.login .left .login-form .actions button {
     background-color: var(--fc-orange-03);
     color: var(--fc-white);
     border-radius: 10px;
-    width: 140px;
-    height: 60px;
+    max-width: 140px;
+    height: 50px;
+    width: 100%;
 }
 
-.left .login-form .actions a {
+.login .left .login-form .actions a {
     color: var(--fc-orange-03);
     text-decoration: none;
     font-size: 0.7rem;
 }
 
-.separator {
-    width: 452px;
+.login .separator {
+    max-width: 380px;
     height: 1px;
+    width: 100%;
     background-color: var(--fc-gray-01);
     margin: 45px 0;
 }
 
-a.btn-signup {
+.login a.btn-signup {
     border: 1px solid var(--fc-orange-03);
     color: var(--fc-orange-03);
-    width: 452px;
-    height: 60px;
+    max-width: 452px;
+    max-height: 60px;
+    width: 100%;
+    height: auto;
 }
 
-a.btn-signup:hover {
+.login a.btn-signup:hover {
     color: var(--fc-orange-03);
     cursor: pointer;
 }
 
-.right {
+.login .right {
     height: 100vh;
     background-color: var(--fc-light-orange-01);
 
     display: flex;
     align-items: center;
     justify-content:center; 
+}
+
+.login .right.bl-5 {
+    border-left: 5px solid var(--fc-orange-03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.login .right .images-wrapper {
+    max-width: 750px;
+    max-height: 844px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /************************
@@ -221,7 +262,7 @@ main {
     margin-bottom: 45px;
 }
 
-.home main .content-wrapper .content button {
+.home main .content-wrapper .content a {
     background-color: var(--fc-orange-03);
     color: var(--fc-white);
     border-radius: 10px;
@@ -238,10 +279,10 @@ main {
 }
 
 .profile-professional .main .container {
-    max-width: 768px
+    max-width: 1024px
 }
 
-main .profile-professional-top {
+.profile-professional main .profile-professional-top {
     background-color: transparent;
 
     display: flex;
@@ -250,65 +291,65 @@ main .profile-professional-top {
     margin-bottom: 50px;
 }
 
-main .profile-professional-top .profile-professional-user {
+.profile-professional main .profile-professional-top .profile-professional-user {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-main .profile-professional-top .profile-professional-user img.profile-professional-picture {
+.profile-professional main .profile-professional-top .profile-professional-user img.profile-professional-picture {
     max-width: 130px;
     max-height: 130px;
 
     margin-right: 30px;
 }
 
-main .profile-professional-top .profile-professional-user .profile-professional-info {
+.profile-professional main .profile-professional-top .profile-professional-user .profile-professional-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
 }
 
-main .profile-professional-top .profile-professional-user .profile-professional-info .profile-professional-status-wrapper {
+.profile-professional main .profile-professional-top .profile-professional-user .profile-professional-info .profile-professional-status-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-main .profile-professional-top .profile-professional-user .profile-professional-info .profile-professional-status-wrapper .profile-professional-status {
+.profile-professional main .profile-professional-top .profile-professional-user .profile-professional-info .profile-professional-status-wrapper .profile-professional-status {
     display: flex;
     color: var(--fc-green);
     margin-left: 6px;
 }
 
-main .profile-professional-top .btn-schedule {
+.profile-professional main .profile-professional-top .btn-schedule {
     max-width: 250px;
     width: 100%;
 }
 
-main .profile-professional-content {
+.profile-professional main .profile-professional-content {
     padding: 60px;
     border-radius: 10px
 }
 
-main .profile-professional-content .profile-professional-personal-informations {
+.profile-professional main .profile-professional-content .profile-professional-personal-informations {
     border-bottom: 1px solid rgba(112, 112, 112, .2);
     padding-bottom: 60px
 }
 
-main .profile-professional-content .profile-professional-personal-informations .row+.row {
+.profile-professional main .profile-professional-content .profile-professional-personal-informations .row+.row {
     margin-top: 45px;
 }
 
-main .profile-professional-content .profile-professional-skills {
+.profile-professional main .profile-professional-content .profile-professional-skills {
     margin-top: 45px;
 
     border-bottom: 1px solid rgba(112, 112, 112, .2);
     padding-bottom: 60px
 }
 
-main .profile-professional-content .profile-professional-skills .profile-professional-skills-filter-list {
+.profile-professional main .profile-professional-content .profile-professional-skills .profile-professional-skills-filter-list {
     list-style-type: none;
 
     display: flex;
@@ -316,70 +357,240 @@ main .profile-professional-content .profile-professional-skills .profile-profess
     justify-content: space-between;
 }
 
-main .profile-professional-content .profile-professional-interest {
+.profile-professional main .profile-professional-content .profile-professional-interest {
     margin-top: 45px;
 }
 
-main .profile-professional-content .profile-professional-interest .profile-professional-interest-filter-list {
+.profile-professional main .profile-professional-content .profile-professional-interest .profile-professional-interest-filter-list {
     list-style-type: none;
+}
+
+/************************
+ ******** tela de agendamento 4 ********* 
+ ************************/
+
+.schedule-summary .main {
+    padding-bottom: 100px;
+    height: 100%;
+}
+
+.schedule-summary .main .container {
+    max-width: 1024px
+}
+
+.schedule-summary main .schedule-summary-top {
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.schedule-summary main .schedule-summary-top .schedule-summary-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.schedule-summary main .schedule-summary-top .schedule-summary-user img.schedule-summary-picture {
+    max-width: 130px;
+    max-height: 130px;
+
+    margin-right: 30px;
+}
+
+.schedule-summary main .schedule-summary-top .schedule-summary-user .schedule-summary-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.schedule-summary main .schedule-summary-top .schedule-summary-user .schedule-summary-info .schedule-summary-status-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.schedule-summary main .schedule-summary-top .schedule-summary-user .schedule-summary-info .schedule-summary-status-wrapper .schedule-summary-status {
+    display: flex;
+    color: var(--fc-green);
+    margin-left: 6px;
+}
+
+.schedule-summary main .schedule-summary-top .schedule-summary-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.schedule-summary main .schedule-summary-top .schedule-summary-actions .btn-schedule {
+    width: 150px;
+    height: 40px;
+}
+
+.schedule-summary main .schedule-summary-top .schedule-summary-actions .btn-schedule + .btn-schedule {
+    margin-left: 20px;
+}
+
+.schedule-summary main .schedule-summary-top .schedule-summary-actions .btn-schedule img {
+        width: 10px;
+        height: 16px;
+        margin-right: 5px;
+}
+
+.stepper-wrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stepper-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+
+.stepper-item::before {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid var(--fc-white);
+    width: 100%;
+    top: 20px;
+    left: -50%;
+    z-index: 2;
+}
+
+.stepper-item::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid var(--fc-white);
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 2;
+}
+
+.stepper-item .step-counter {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--fc-white);
+    color: var(--fc-white);
+    margin-bottom: 6px;
+}
+
+.stepper-item.active {
+    font-weight: bold;
+}
+
+.stepper-item.completed .step-counter {
+    background-color: var(--fc-orange-03);
+}
+
+.stepper-item.completed::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid var(--fc-orange-03);
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 3;
+}
+
+.stepper-item:first-child::before {
+    content: none;
+}
+
+.stepper-item:last-child::after {
+    content: none;
+}
+
+.schedule-summary main .schedule-summary-content {
+    padding: 60px;
+    border-radius: 10px
+}
+
+.schedule-summary main .schedule-summary-content .schedule-summary-informations {
+    padding-bottom: 60px
+}
+
+.schedule-summary main .schedule-summary-content .schedule-summary-informations .row + .row {
+    margin-top: 45px;
 }
 
 /************************
  ******** tela de confirmacao ********* 
  ************************/
 
-.tela-de-confirmacao
+.tela-de-confirmacao {}
 
 .tela-de-confirmacao main .container {
-    background-color: var(--fc-white);
-    width: 800px;
-    height: 425px;
+    max-width: 1024px;
 }
 
-.tela-de-confirmacao main .container .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.tela-de-confirmacao main .container .content img {
-    background-color: var(--fc-white);
-    max-width: 122px;
-    max-height: 110px;
-    width: 100%;
-    height: 100%;
-    margin-top: 40px;
-    margin-bottom: 35px;
-}
-
-.tela-de-confirmacao main .container .content h1 {
-    font-weight: 500;
-    line-height: 1.2;
-    width: 100%;
-    height: 100%;
-}
-
-.tela-de-confirmacao main .container .content .schedule-wrapper {
+.tela-de-confirmacao main .tela-de-confirmacao-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-width: 400px;
+
+    margin-bottom: 40px;
 }
 
-.tela-de-confirmacao main .container .content .schedule-date {
+.tela-de-confirmacao main .tela-de-confirmacao-top .tela-de-confirmacao-message {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    margin: 25px 128px 0 0;
+    align-items: center;
 }
 
-.tela-de-confirmacao main .container .content .schedule-hour {
+.tela-de-confirmacao main .tela-de-confirmacao-top .tela-de-confirmacao-message strong {
+    color: var(--fc-orange-03);
+}
+
+.tela-de-confirmacao main .tela-de-confirmacao-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 150px 100px;
+}
+
+.tela-de-confirmacao main .tela-de-confirmacao-content .tela-de-confirmacao-picture {
+    max-width: 350px;
+    width: 100%;
+}
+
+.tela-de-confirmacao main .tela-de-confirmacao-content .tela-de-confirmacao-date {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
-    margin: 25px 0 0 0;
+    justify-content: center;
+
+    max-width: 300px;
+    width: 100%;
+}
+
+.tela-de-confirmacao main .tela-de-confirmacao-content .tela-de-confirmacao-hour {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    max-width: 300px;
+    width: 100%;
 }
