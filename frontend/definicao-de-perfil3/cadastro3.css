@@ -1,11 +1,18 @@
-.borda-nav{
+nav{
+    background-color: #ffffff;
     border-bottom: 1px solid #E3E3E3;
-    margin: 0 0 50px 0;
 }
 
-body{
-    background-color: #FFF6F3;
+.li {
+    text-decoration: none;
+    font-family: "Metropolis, Regular";
     font-size: 22px;
+    color: #FF4500;
+}
+
+li:hover {
+    color: #FF4500;
+    text-decoration: underline;
 }
 
 h1{
@@ -13,6 +20,33 @@ h1{
     color: #FF4500;
     text-align: center;
     font-size: 32px;
+}
+
+.perfil {
+    display: flex;
+  }
+  
+.perfil-foto {
+    max-height: 150px;
+  }
+
+p{
+    font-size: 22px;
+}
+
+h1{
+    font-size: 34px;
+}
+
+.color-span{
+    color: #0ECB1A;
+}
+
+
+body {
+    background-color: #FFF6F3;
+    font-size: 22px;
+    justify-content: center;
 }
 
 .bar-etapas{
@@ -32,36 +66,44 @@ h1{
 }
 
 .botao{
-    position: relative;
-    left: 400px;
     background-color: #FFF6F3;
-    font-family: "Segoe UI, Regular";
+    text-align: center;
+    font-size: 28px;
+    font-family: "Metropolis, Regular";
     color: #FF4500;
+    border-radius: 10px;
+    width: 194px;
     border: 1px solid #FF4500;
     opacity: 1;
+    cursor: pointer;
+}
+
+.botao a{
+    color: #FF4500;
+    text-decoration: none;
+    font-family: "Metropolis, Regular";
+    font-size: 28px;
 }
 
 .botao:hover{
     background-color: #FF4500;
-    color: #FFF6F3;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10px;
+    width: 194px;
+    border: 1px solid #FF4500;
+    opacity: 1;
 }
 
-a{
-    font-family: "Segoe UI, Regular";
-    color: #FF4500;
-    text-decoration: none;
-}
-
-a:hover{
+.botao:hover a{
     color: #ffffff;
     text-decoration: none;
+    font-family: "Metropolis, Regular";
+    font-size: 28px;
 }
 
 .descricao-etapas{
     display: inline-block;
-    font-size: 15px;
-    margin-top: 30px;
-    margin-left: 30px;
 }
 
 .primeira-section {
@@ -71,9 +113,9 @@ a:hover{
 .segunda-section {
     background-color: #ffffff;
     font-family: "Metropolis, Regular";
-    width: 920px;
     height: 878;
     border-radius: 10px;
     opacity: 1;
 }
+
 
