@@ -24,16 +24,16 @@ const authenticate = async () => {
     });
 }
 
-const input = document.getElementById('password')
+const inputEmail = document.getElementById('email')
+const inputPassword = document.getElementById('password')
 const button = document.getElementById('btn-login')
 
 
 const validation = () => {
-  console.log(input.value)
-  if (input.value === 'senha123') {
+  if (inputPassword.value === 'senha123') {
     button.disabled = false
   } else {
     button.disabled = true
   }
 }
-input.addEventListener('keydown', validation)
+inputPassword.addEventListener('input', validation)
