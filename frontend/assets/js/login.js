@@ -1,51 +1,39 @@
-var botaoCadastrar = document.querySelector("#finalizar-cadastro");
-botaoCadastrar.addEventListener("click", 
-function(event){
-    event.preventDefault();
-    var form = document.querySelector("#form-cadastro")
+const authenticate = async () => {
+    // const data = { 
+    //     email: document.getElementById("email").value,
+    //     password: document.getElementById("password").value
+    // };
 
-    //Extraindo informações do usuario do form
-    var usuario = obtemUsuarioCadastrado(form)
+    const data = { 
+        email: 'fulanodasilva@email.com',
+        password: 'senha123'
+    };
 
-    //cria tr e td do usuario
-    var usuarioTr = montaTr(usuario)
-    
-    
-    var tabela = document.querySelector("#tabela-usuarios")
-    tabela.appendChild(usuarioTr);
-
-    form.reset();
-})
-
-function obtemUsuarioCadastrado(form){
-    
-    var usuario = {
-        nome: form.nome.value,
-        email: form.email.value,
-        senha: form.senha.value
-    }
-    return usuario;
+    await axios.put('http://localhost:3333/auth/login', data)
+    .then((response) => response.data)
+    //Then with the data from the response in JSOrN...
+    .then((data) => {
+        console.log(data.data.uid);
+        if(data.data.uid) {
+            location.href = 'http://localhost:5500/frontend/home.html';
+        }
+    })
+    //Then with the error genereted...
+    .catch((error) => {
+        console.error('Error:', error);
+    });
 }
 
-function montaTr(usuario) {
-    var usuarioTr = document.createElement("tr");
-    usuarioTr.classList.add("usuario");
+const input = document.getElementById('password')
+const button = document.getElementById('btn-login')
 
-    var nomeTd = document.createElement("td");
-    nomeTd.textContent = usuario.nome;
-    nomeTd.classList.add("info-nome");
 
-    var emailTd = document.createElement("td");
-    emailTd.textContent = usuario.email;
-    emailTd.classList.add("info-email");
-    
-    var senhaTd = document.createElement("td");
-    senhaTd.textContent = usuario.senha;
-    senhaTd.classList.add("info-senha");
-
-    usuarioTr.appendChild(nomeTd);
-    usuarioTr.appendChild(emailTd);
-    usuarioTr.appendChild(senhaTd);
-
-    return usuarioTr;
+const validation = () => {
+  console.log(input.value)
+  if (input.value === 'senha123') {
+    button.disabled = false
+  } else {
+    button.disabled = true
+  }
 }
+input.addEventListener('keydown', validation)
